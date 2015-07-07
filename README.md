@@ -21,17 +21,26 @@ exit
 ```bash
 # update command below with your real name
 git config --global user.name "Your Name Here"
+
 # update command below with your real email
 git config --global user.email your_email@example.com
+
 # use which to find the path to your favorite editor
 which atom
+
 # update command below with path to your favorite editor
 git config --global core.editor "atom --wait"
-# make sure git uses color when not piping to other apps
+
+# typical settings
 git config --global color.ui auto
+git config --global push.default simple
+
 # adds lga command to git (try it, you'll like it)
 git config --global alias.lga "log --graph --oneline --all --decorate"
+
+# install jslint
 sudo npm install jslint -g
+
 cd ~/
 touch .bash_profile
 atom .bash_profile .bashrc
@@ -52,7 +61,7 @@ source $NVM_DIR/nvm.sh
   - Enter merge-conflicts and press Packages
   - Install merge-conflicts package
 
-  If you want to unset any git config commands you can use the following command
-  ```
-  git config --global --unset-all core.editor
-  ```
+If you want to unset any git config commands you can use the following command
+```
+git config --global --unset-all core.editor
+```
