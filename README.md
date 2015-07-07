@@ -5,50 +5,54 @@ Configuration steps, scripts and tools i use on mac machines.
 
 ### Setting up your development environment
 
+- Install [iTerm2](https://www.iterm2.com/)
+- Install [Homebrew](http://brew.sh/)
 - Install [Node](http://nodejs.org/)
-
-defaults install to /usr/local/bin
-
-- Install [Sublime Text 2](http://www.sublimetext.com/2)
-- Install [KDiff3](http://kdiff3.sourceforge.net/)
-- Install [Git](http://msysgit.github.io/)
-
-    Be sure to select "Run Git and included Unix tools from the Windows Command Prompt". We will remove the paths later (if you were worried)
-
-### From an elevated command prompt
-
+- Install Git and get ready to install nvm (launch iTerm2)
 ```
+cd ~/
+brew install git
+touch .bashrc
+exit
+```
+- Install [Node Version Manager](https://github.com/creationix/nvm)
+- Install [Atom](https://atom.io/) (or your favorite ediotr)
+- Configure Git and Bash (launch iTerm2)
+```bash
+# update command below with your real name
 git config --global user.name "Your Name Here"
-git config --global user.email "your_email@example.com"
-cd "c:\Program Files (x86)"
-git clone https://github.com/seank-com/dev-win-config.git Scripts
-```
-
-### Create a shortcut on your desktop with the following Target
-
-```
-C:\Windows\System32\cmd.exe /k "C:\Program Files (x86)\Scripts\Init.cmd"
-```
-
-Click the Advanced button and check 'Run as administrator'
-
-From Win-X | System | Advanced system settings | Environment Variables..., remove the following from the end of PATH
-
-```
-;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Git\bin
-
-```
-
-### Launch the dev window from the shortcut
-
-```
-git config --global core.editor "'c:/Program Files/Sublime Text 2/sublime_text.exe' -w"
+# update command below with your real email
+git config --global user.email your_email@example.com
+# use which to find the path to your favorite editor
+which atom
+# update command below with path to your favorite editor
+git config --global core.editor "atom --wait"
+# make sure git uses color when not piping to other apps
 git config --global color.ui auto
-git config --global diff.tool windiff
-git config --global difftool.prompt false
-git config --global difftool.windiff.cmd  "'C:/Program Files (x86)/Scripts/windiff.exe' $LOCAL $REMOTE"
-git config --global merge.tool kdiff3
-git config --global mergetool.kdiff3.cmd "'C:/Program Files (x86)/KDiff3/kdiff3.exe' $BASE $LOCAL $REMOTE -o $MERGED"
-git config --global alias.lga "log --graph --oneline --al --decorate"
-npm install jslint -g
+# adds lga command to git (try it, you'll like it)
+git config --global alias.lga "log --graph --oneline --all --decorate"
+sudo npm install jslint -g
+cd ~/
+touch .bash_profile
+atom .bash_profile .bashrc
 ```
+Edit .bash_profile (see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html) for details)
+```
+[[ -s ~/.bashrc ]] && source ~/.bashrc
+```
+Edit .bashrc (nvm will write some of this during install)
+```
+export NVM_DIR=~/.nvm
+source $NVM_DIR/nvm.sh
+[ -r $NVM_DIR/bash_completion ] && . $NVM_DIR/bash_completion
+```
+- Configure Atom
+  - Goto Atom | Preferences
+  - Got Install Tab
+  - Enter merge-conflicts and press Packages
+  - Install merge-conflicts package
+
+  If you want to unset any git config commands you can use the following command
+  ```
+  git config --global --unset-all core.editor
+  ```
