@@ -38,7 +38,7 @@ git config --global push.default simple
 git config --global alias.lga "log --graph --oneline --all --decorate"
 
 # install jslint
-npm install jslint
+sudo -H npm install jslint -g
 cd ~/
 touch .bash_profile
 atom .bash_profile .bashrc
