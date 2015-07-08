@@ -8,40 +8,46 @@ Configuration steps, scripts and tools i use on mac machines.
 - Install [Homebrew](http://brew.sh/)
 - Install [Node](http://nodejs.org/)
 - Install Git and get ready to install nvm (launch iTerm2)
-```
-cd ~/
-brew install git
-touch .bashrc
-exit
+```bash
+$ cd ~/
+$ brew install git
+$ touch .bashrc
+$ exit
 ```
 - Install [Node Version Manager](https://github.com/creationix/nvm)
 - Install [Atom](https://atom.io/) (or your favorite ediotr)
+- Install [P4Merge](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools) (helpful for diff and merge)
 - Configure Git and Bash (launch iTerm2)
 ```bash
 # update command below with your real name
-git config --global user.name "Your Name Here"
+$ git config --global user.name "Your Name Here"
 
 # update command below with your real email
-git config --global user.email your_email@example.com
+$ git config --global user.email your_email@example.com
 
-# use which to find the path to your favorite editor
-which atom
+# setup atom as your editor for git commits and such
+$ git config --global core.editor "atom --wait"
 
-# update command below with path to your favorite editor
-git config --global core.editor "atom --wait"
+# setup p4merge as a visual diff and merge tool
+$ git config --global diff.tool p4mergetool
+$ git config --global difftool.p4mergetool.cmd "/Applications/p4merge.app/Contents/Resources/launchp4merge \$LOCAL \$REMOTE"
+$ git config --global merge.tool p4mergetool
+$ git config --global mergetool.p4mergetool.cmd "/Applications/p4merge.app/Contents/Resources/launchp4merge \$PWD/\$BASE \$PWD/\$REMOTE \$PWD/\$LOCAL \$PWD/\$MERGED"
+$ git config --global mergetool.p4mergetool.trustExitCode false
+$ git config --global mergetool.keepBackup false
 
 # typical settings
-git config --global color.ui auto
-git config --global push.default simple
+$ git config --global color.ui auto
+$ git config --global push.default simple
 
 # adds lga command to git (try it, you'll like it)
-git config --global alias.lga "log --graph --oneline --all --decorate"
+$ git config --global alias.lga "log --graph --oneline --all --decorate"
 
 # install jslint
-sudo -H npm install jslint -g
-cd ~/
-touch .bash_profile
-atom .bash_profile .bashrc
+$ sudo -H npm install jslint -g
+$ cd ~/
+$ touch .bash_profile
+$ atom .bash_profile .bashrc
 ```
 Edit .bash_profile (see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html) for details)
 ```bash
@@ -61,11 +67,11 @@ source $NVM_DIR/nvm.sh
   - Install merge-conflicts package
 - Restart iTerm window
 ```bash
-nvm install node
-nvm install iojs
-nvm use stable
+$ nvm install node
+$ nvm install iojs
+$ nvm use stable
 ```
-If you want to unset any git config commands you can use the following command
+*If you want to unset any git config commands you can use the following command*
 ```bash
-git config --global --unset-all core.editor
+$ git config --global --unset-all core.editor
 ```
