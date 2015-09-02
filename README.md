@@ -75,3 +75,11 @@ $ nvm use stable
 ```bash
 $ git config --global --unset-all core.editor
 ```
+
+Atom configuration (see [discussion](https://github.com/atom/atom/issues/1365#issuecomment-43124097) for details)
+
+```
+'.editor':
+  'ctrl-alt-up': 'editor:add-selection-above'
+  'ctrl-alt-down': 'editor:add-selection-below'
+```
