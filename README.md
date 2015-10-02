@@ -4,17 +4,24 @@ Configuration steps, scripts and tools i use on mac machines.
 
 ### Setting up your development environment
 
+- Install [Chrome](http://www.google. com/chrome/)
 - Install [iTerm2](https://www.iterm2.com/)
 - Install [Homebrew](http://brew.sh/)
-- Install [Node](http://nodejs.org/)
-- Install Git and get ready to install nvm (launch iTerm2)
+- Find your username, take ownership of usr/local and install Git and Node (launch iTerm2)
 ```bash
 $ cd ~/
+$ whoami
+$ sudo chwon -R <username> /usr/local
+$ sudo chwon -R <username> /Users/<username>
 $ brew install git
+$ cd /usr/local/bin/
+$ ln -s ../Cellar/git/2.5.0//libexec/git-core/git-gui git-gui
+$ cd ~/
+$ brew install node
 $ touch .bashrc
 $ exit
 ```
-- Install [Node Version Manager](https://github.com/creationix/nvm)
+- Install [Node Version Manager](https://github.com/creationix/nvm) (optional)
 - Install [Atom](https://atom.io/) (or your favorite ediotr)
 - Install [P4Merge](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools) (helpful for diff and merge)
 - Configure Git and Bash (launch iTerm2)
@@ -44,8 +51,14 @@ $ git config --global push.default simple
 $ git config --global alias.lga "log --graph --oneline --all --decorate"
 
 # install jslint
-$ sudo -H npm install jslint -g
+$ npm install jslint -g
+
+# install node-inspector
+$ npm install node-inspector -g
+
 $ cd ~/
+$ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o .git-prompt.sh
+$ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o .git-completion.sh
 $ touch .bash_profile
 $ atom .bash_profile .bashrc
 ```
@@ -58,6 +71,29 @@ Edit .bashrc (nvm will write some of this during install)
 export NVM_DIR=~/.nvm
 source $NVM_DIR/nvm.sh
 [ -r $NVM_DIR/bash_completion ] && . $NVM_DIR/bash_completion
+source ~/.git-completion.sh
+source ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_HIDE_IF_PWD_IGNORED=true
+GIT_PS1_SHOWUPSTREAM="verbose"
+PS1='\[\e[0;36m\]\w\[\e[0;32m\]$(__git_ps1 " (%s)")\n\[\e[1;31m\]\t\[\e[0m\] \$ '
+
+alias ll='ls -AlF'
+alias ls='ls -AF'
+alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
+
+help()
+{
+  man -t $1 | open -f -a /Applications/Preview.app
+}
+
+where()
+{
+  find / -name $1 2>/dev/null
+}
+}
 ```
 - Follow the instructions on github for [setting up ssh](https://help.github.com/articles/generating-ssh-keys/)
 - Configure Atom
@@ -65,6 +101,7 @@ source $NVM_DIR/nvm.sh
   - Got Install Tab
   - Enter merge-conflicts and press Packages
   - Install merge-conflicts package
+  - repeat for file-types, find-selection, jsonlint, & sort-lines
 - Restart iTerm window
 ```bash
 $ nvm install node
