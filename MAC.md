@@ -19,36 +19,33 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
     - repeat for file-types, find-selection, jsonlint, & sort-lines
   - Goto Atom | Preferences | Open Config Folder
     - Click config.cson and edit so it looks generally like this
-
-```coffee
-"*":
-  core: {}
-  editor:
-    invisibles: {}
-  "exception-reporting":
-    userId: "<don't change what atom has here>"
-  "file-types":
-    cdo: "source.json"
-  jsonlint:
-    hideOnNoErrors: true
-  welcome:
-    showOnStartup: false
-```
+    ```coffee
+    "*"
+      core: {}
+      editor:
+        invisibles: {}
+      "exception-reporting":
+        userId: "<don't change what atom has here>"
+      "file-types":
+        cdo: "source.json"
+      jsonlint:
+        hideOnNoErrors: true
+      welcome:
+        showOnStartup: false
+    ```
     - Click keymap.cson and append the following
-
-```coffee
-'.editor':
-  'ctrl-alt-up': 'editor:add-selection-above'
-  'ctrl-alt-down': 'editor:add-selection-below'
-
-'atom-text-editor':
-  'alt-cmd-j': 'find-selection:find-previous-casesensitive'
-  'alt-cmd-k': 'find-selection:find-next-casesensitive'
-```
+    ```coffee
+    '.editor':
+      'ctrl-alt-up': 'editor:add-selection-above'
+      'ctrl-alt-down': 'editor:add-selection-below'
+    
+    'atom-text-editor':
+      'alt-cmd-j': 'find-selection:find-previous-casesensitive'
+      'alt-cmd-k': 'find-selection:find-next-casesensitive'
+    ```
 - Install [VisualStudio Code](https://code.visualstudio.com/)
 - Install [P4Merge](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools) (helpful for diff and merge)
 - Take ownership of usr/local and install Git and Node (from iTerm2 console)
-
 ```bash
 $ cd ~/
 $ sudo chown -R $(whoami) /usr/local
@@ -136,13 +133,13 @@ where()
 {
   find / -name $1 2>/dev/null
 }
+
 code()
 {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@";
 }
 ```
 - Restart iTerm window
-
 ```bash
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
@@ -157,9 +154,7 @@ $ pbcopy < ~/.ssh/id_rsa.pub
   - Enter a name for your machine
   - Right click in key field and select Paste
   - Click Add SSH key
-
 - To show the full path at the top of the finder windows run the following from the iTerm window and restart the Finder from the dock
-
 ```bash
 $ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 $ osascript -e 'tell app "Finder" to quit'
