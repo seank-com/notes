@@ -96,7 +96,7 @@ $ npm install jslint -g
 $ npm install node-inspector -g
 
 # if you get an error on the above do this and retry
-$ sudo xcode-select -s /Application/Xcode.app/Contents/Developer
+$ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 # download prompt
 $ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o .git-prompt.sh
