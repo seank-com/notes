@@ -2,7 +2,7 @@
 
 Configuration steps, scripts and tools i use on linux machines. Feel free to skip any steps that don't work for you or add steps if you think something is missing.
 
-I assume you are setting up a physical machine by booting a DVD with the [Ubuntu Server 64 bit ISO](http://www.ubuntu.com/download/server). If you are setting up a virtual machine you really should use vagrant and the steps in [Devops](../Devops/README.md)
+I assume you are setting up a physical machine by booting a DVD with the [Ubuntu Server 64 bit ISO](http://www.ubuntu.com/download/server). If you are setting up a virtual machine either locally or in the cloud, see [Cloud configuration](Cloud.md)
 
 ## Basic Install
 
@@ -292,8 +292,138 @@ $ sudo start nginx
 
 ## Setting up a MySQL server
 
-Coming soon
+```bash
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install mysql-server-5.6
+```
+
+mysql root password: see 'MySQL Root Password' in LastPass for IT@LearnBIG.com
+
+Open
+
+```bash
+sudo vim /etc/mysql/my.cnf
+```
+
+comment out line:
+
+```bash
+#bind-address           = 127.0.0.1
+```
+
+Create remote user:
+
+```bash
+sudo restart mysql
+mysql -u root -p
+GRANT ALL PRIVILEGES ON *.* TO 'LBdbadmin'@'%' IDENTIFIED BY 'Hn5StEXzLjANkgmb' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+QUIT;
+```
+
+Then server is ready for database creation:
+
+```bash
+./bin/devcon create-database reporting-msft-007.learnbig.com <database-name>
+```
+
+Note: You may need to connect via mySQL Workbench to reset the password
+
+```
+INSERT `athena-vul-ade`.projects (id, name, clientid) VALUES (1, 'vul-ade', 2);
+```
 
 ## Setting up a MongoDB server
 
-Coming soon
+Borrowed from the [internet](http://www.liquidweb.com/kb/how-to-install-mongodb-on-ubuntu-14-04/)
+
+* Import MongoDB public key used by the package manager.
+* Ceate a list file for MongodDB
+* Reload the package database
+* Install Mongo
+* Start service
+* Check status
+
+```bash
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo 'deb http://download-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo service mongod start
+sudo service mongod status
+```
+
+if you see a warning about hugepages when you run mongo, follow these steps here to create the /etc/init.d/disable-transparent-hugepages (borrowed from the [internet](http://docs.mongodb.org/master/tutorial/transparent-huge-pages/))
+
+```bash
+sudo vim /etc/init.d/disable-transparent-hugepages
+```
+
+```bash
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          disable-transparent-hugepages
+# Required-Start:    $local_fs
+# Required-Stop:
+# X-Start-Before:    mongod mongodb-mms-automation-agent
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Disable Linux transparent huge pages
+# Description:       Disable Linux transparent huge pages, to improve
+#                    database performance.
+### END INIT INFO
+
+case $1 in
+  start)
+    if [ -d /sys/kernel/mm/transparent_hugepage ]; then
+      thp_path=/sys/kernel/mm/transparent_hugepage
+    elif [ -d /sys/kernel/mm/redhat_transparent_hugepage ]; then
+      thp_path=/sys/kernel/mm/redhat_transparent_hugepage
+    else
+      return 0
+    fi
+
+    echo 'never' > ${thp_path}/enabled
+    echo 'never' > ${thp_path}/defrag
+
+    unset thp_path
+    ;;
+esac
+```
+
+```bash
+sudo chmod 755 /etc/init.d/disable-transparent-hugepages
+sudo update-rc.d disable-transparent-hugepages defaults
+```
+
+fix timeout issues on azure, borrowed from the [internet](https://docs.mongodb.org/manual/administration/production-notes/#azure)
+
+```bash
+sudo vim /etc/sysctl.conf
+```
+
+Add the following line to the end of the file.
+
+```
+net.ipv4.tcp_keepalive_time = 120
+```
+
+If mongo will run on a server different from your node server then
+you need to update the bind_ip line in /etc/mongod.conf
+
+```
+sudo vim /etc/mongod.conf
+```
+
+change the following line from
+
+```
+bind_ip = 127.0.0.1
+```
+
+to
+
+```
+bind_ip = 0.0.0.0
+```
