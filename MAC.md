@@ -93,6 +93,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # if you get an error on the above do this and retry
   $ sudo xcode-select -s /Application/Xcode.app/Contents/Developer
 
+  # if you install source tree (https://www.sourcetreeapp.com/)
+  $ ln -s /Applications/SourceTree.app/Contents/Resources/stree /usr/local/bin/
+
   # download prompt
   $ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o .git-prompt.sh
   $ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o .git-completion.sh
