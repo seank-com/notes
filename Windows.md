@@ -1,4 +1,4 @@
-# MAC Configuration
+# Windows Configuration
 
 Configuration steps, scripts and tools i use on windows machines. Feel free to skip any steps that don't work for you or add steps if you think something is missing.
 
