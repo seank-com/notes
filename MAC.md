@@ -162,9 +162,14 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 16. Install [Android File Transfer](https://www.android.com/filetransfer/)
 17. Update hosts file
   ```bash
-  atom /etc/hosts
+  $ atom /etc/hosts
   ```
-  add the following line to the end
+  $ add the following line to the end
   ```
   127.0.0.1 local.<yourdomainname>.com
+  ```
+18. Install [OSXFUSE](http://osxfuse.github.io/)
+19. Install SSHFS
+  ```bash
+  $ brew install homebrew/fuse/sshfs
   ```
