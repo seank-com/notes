@@ -5,3 +5,4 @@ Here I document install steps, scripts and settings I use for each platform I wo
 ## [Mac](MAC.md)
 ## [Windows](Windows.md)
 ## [Linux](Linux.md)
+## [Cloud](Cloud.md)
