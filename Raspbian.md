@@ -123,7 +123,7 @@ $ git checkout develop
 $ git pull
 ```
 
-Getting it ready to run
+Getting it ready to run forever
 
 ```bash
 $ npm install forever -g
@@ -226,9 +226,6 @@ Now configure Nginx
 ```bash
 $ sudo nano /etc/nginx/sites-enabled/default
 ```
-
-If you have an SSL certificate, then let nginx manage it and
-redirect all http traffic to https before proxying to node.
 
 Replace the contents of /etc/nginx/sites-enabled/default with
 the following
