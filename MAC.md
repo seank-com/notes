@@ -173,3 +173,4 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   ```bash
   $ brew install homebrew/fuse/sshfs
   ```
+  20. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)

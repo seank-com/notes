@@ -11,11 +11,11 @@ Configuration steps, scripts and tools i use on RaspberryPi platforms. Feel free
 - Change language to en-us
 - Choose either Raspbian or Windows 10 IoT Core and follow the steps below
 
-## Raspbian
+### Raspbian
 
 - Wait while install completes
 
-## Windows 10 IoT Core
+### Windows 10 IoT Core
 
 - select Windows IoT Core
 - accept license agreement
@@ -35,3 +35,7 @@ Configuration steps, scripts and tools i use on RaspberryPi platforms. Feel free
 - click Confirm
 - click Download Now
 - Wait while install completes
+
+## Installing from a Raspbian Img
+
+- See steps for creating an image at [raspberrypi.org](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
