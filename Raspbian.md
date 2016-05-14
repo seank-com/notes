@@ -126,7 +126,7 @@ $ git pull
 Getting it ready to run forever
 
 ```bash
-$ npm install forever -g
+$ sudo npm install forever -g
 $ nano /var/node/forever.json
 ```
 
