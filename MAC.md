@@ -174,3 +174,5 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew install homebrew/fuse/sshfs
   ```
 19. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
+20. Install [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+21. Install [USB to UART driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
