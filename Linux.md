@@ -173,10 +173,10 @@ server {
     proxy_pass http://127.0.0.1:4000/;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_connect_timeout       300;
-    proxy_send_timeout          300;
-    proxy_read_timeout          300;
-    send_timeout                300;
+    proxy_connect_timeout       3s;
+    proxy_send_timeout          120s;
+    proxy_read_timeout          120s;
+    send_timeout                120s;
   }
 }
 ```
