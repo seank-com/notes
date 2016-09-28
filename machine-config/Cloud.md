@@ -1,6 +1,6 @@
 # Cloud Configuration
 
-![alt text](docs/img/cloud.png "There is no cloud")
+![alt text](../docs/img/cloud.png "There is no cloud")
 
 It doesn't matter if its [Azure](https://azure.microsoft.com/), [AWS](https://aws.amazon.com/), [Rackspace](https://www.rackspace.com/en-us/cloud), [Dreamhost](https://www.dreamhost.com/cloud/) or even local ([Vagrant](https://www.vagrantup.com/)), the pattern is basically the same.
 1. Pick a vm configuration and spin it up with an installation of Ubuntu Server.
