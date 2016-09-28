@@ -103,11 +103,11 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ touch .bashrc
   $ atom .bash_profile .bashrc
   ```
-9. Edit .bash_profile (see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html) for details)
+8. Edit .bash_profile (see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html) for details)
   ```bash
   [[ -s ~/.bashrc ]] && source ~/.bashrc
   ```
-10. Edit .bashrc (nvm will write some of this during install)
+9. Edit .bashrc (nvm will write some of this during install)
   ```bash
   source ~/.git-completion.sh
   source ~/.git-prompt.sh
@@ -136,7 +136,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
     VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@";
   }
   ```
-11. Restart iTerm window
+10. Restart iTerm window
   ```bash
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
@@ -146,21 +146,21 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ ssh-add ~/.ssh/id_rsa
   $ pbcopy < ~/.ssh/id_rsa.pub
   ```
-12. Goto [Github ssh settings](https://github.com/settings/ssh)
+11. Goto [Github ssh settings](https://github.com/settings/ssh)
   - Click New SSH key
   - Enter a name for your machine
   - Right click in key field and select Paste
   - Click Add SSH key
-13. To show the full path at the top of the finder windows run the following from the iTerm window and restart the Finder from the dock
+12. To show the full path at the top of the finder windows run the following from the iTerm window and restart the Finder from the dock
   ```bash
   $ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
   $ osascript -e 'tell app "Finder" to quit'
   ```
-14. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+13. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
   - Download [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO) - *If you want to run a Windows 10 vm (useful for building Windows Phone versions of Cordova)*
-15. Install [Vagrant](https://www.vagrantup.com/downloads.html)
-16. Install [Android File Transfer](https://www.android.com/filetransfer/)
-17. Update hosts file
+14. Install [Vagrant](https://www.vagrantup.com/downloads.html)
+15. Install [Android File Transfer](https://www.android.com/filetransfer/)
+16. Update hosts file
   ```bash
   $ atom /etc/hosts
   ```
@@ -168,9 +168,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   ```
   127.0.0.1 local.<yourdomainname>.com
   ```
-18. Install [OSXFUSE](http://osxfuse.github.io/)
-19. Install SSHFS
+17. Install [OSXFUSE](http://osxfuse.github.io/)
+18. Install SSHFS
   ```bash
   $ brew install homebrew/fuse/sshfs
   ```
-  20. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
+19. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
