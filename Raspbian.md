@@ -191,7 +191,7 @@ sudo su node -c 'FOREVER_ROOT=/var/forever /usr/bin/forever list'
 Now configure logrotate to handle the logs
 
 ```bash
-$ sudo nano etc/logrotate.d/iot-server
+$ sudo nano /etc/logrotate.d/iot-server
 ```
 
 Paste the following
