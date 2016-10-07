@@ -13,6 +13,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     - repeat for file-types, find-selection, jsonlint, & sort-lines
   - Goto Atom | Preferences | Open Config Folder
     - Click config.cson and edit so it looks generally like this
+    
       ```coffee
       "*":
         core: {}
