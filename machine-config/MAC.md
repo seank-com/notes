@@ -16,7 +16,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   - Goto Atom | Preferences | Install
     - Enter merge-conflicts and press Packages
     - Install merge-conflicts package
-    - repeat for file-types, find-selection, jsonlint, & sort-lines
+    - repeat for file-types, find-selection, jsonlint, sort-lines & atom-mermaid
   - Goto Atom | Preferences | Open Config Folder
     - Click config.cson and edit so it looks generally like this
       ```coffee
