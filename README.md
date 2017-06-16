@@ -9,6 +9,23 @@ Here I document install steps, scripts and settings I use for each platform I wo
 
 # Technologies
 
+## React / Redux
+
+Redux Principles
+
+- The whole state of your application is represented in a single
+  Javascript object.
+- The state is read-only. Anytime you want to change the state
+  tree you must dispatch an action.
+- To describe state mutations you have to write a pure Reducer
+  function that takes the previous state of the app and the action
+  being dispatched and returns the next state of the app.
+
+[Video Training for Redux](https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree)
+[React Pen](http://codepen.io/gaearon/pen/ZpvBNJ?editors=0010)
+[React Hello World](https://facebook.github.io/react/docs/hello-world.html)
+[React Home](https://facebook.github.io/react/)
+
 ## Big data
 
 - **MapReduce** is the Google paper that started it all ([Page on googleusercontent.com](http://static.googleusercontent.com/media/research.google.com/en/us/archive/mapreduce-osdi04.pdf)). It's a paradigm for writing distributed code inspired by some elements of functional programming. You don't have to do things this way, but it neatly fits a lot of problems we try to solve in a distributed way. The Google internal implementation is called MapReduce and **Hadoop** is it's open-source implementation. Amazon's Hadoop instance is called Elastic MapReduce (**EMR**) and has plugins for multiple languages.
