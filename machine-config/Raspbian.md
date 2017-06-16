@@ -266,3 +266,5 @@ $ sudo update-rc.d iot-server defaults
 $ sudo /etc/init.d/iot-server start
 $ sudo /etc/init.d/nginx start
 ```
+
+http://weworkweplay.com/play/automatically-connect-a-raspberry-pi-to-a-wifi-network/
