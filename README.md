@@ -6,6 +6,7 @@ Here I document install steps, scripts and settings I use for each platform I wo
 ## [Windows](machine-config/Windows.md)
 ## [Linux](machine-config/Linux.md)
 ## [Cloud](machine-config/Cloud.md)
+## [Azure](azure/README.md)
 
 # Technologies
 
