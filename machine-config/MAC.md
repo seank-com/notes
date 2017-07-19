@@ -11,28 +11,22 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   - Goto iTerm | Preferences | Profiles | Terminal
     - Check Unlimited scrollback
 3. Install [Homebrew](http://brew.sh/)
-4. Install [XCode](https://developer.apple.com/xcode)
-5. Install [Atom](https://atom.io/)
+4. Install [XCode](https://developer.apple.com/xcode) then launch it to complate installation
+5. From an iTerm2 console run the following:
+
+  ```bash
+  $ brew install git
+  $ brew install node
+  $ brew cask install atom
+  $ brew cask install visual-studio-code
+  ```
+
+6. Launch ```atom``` from iTerm console
   - Goto Atom | Preferences | Install
     - Enter merge-conflicts and press Packages
     - Install merge-conflicts package
-    - repeat for file-types, find-selection, jsonlint, sort-lines & atom-mermaid
+    - repeat for find-selection, sort-lines & atom-mermaid
   - Goto Atom | Preferences | Open Config Folder
-    - Click config.cson and edit so it looks generally like this
-      ```coffee
-      "*":
-        core: {}
-        editor:
-          invisibles: {}
-        "exception-reporting":
-          userId: "<don't change what atom has here>"
-        "file-types":
-          cdo: "source.json"
-        jsonlint:
-          hideOnNoErrors: true
-        welcome:
-          showOnStartup: false
-      ```
     - Click keymap.cson and append the following    
       ```coffee
       '.editor':
@@ -43,31 +37,14 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
         'alt-cmd-j': 'find-selection:find-previous-casesensitive'
         'alt-cmd-k': 'find-selection:find-next-casesensitive'
       ```
-6. Install [VisualStudio Code](https://code.visualstudio.com/)
-7. Take ownership of usr/local and install Git and Node (from iTerm2 console)
+7. Install [Visual Studio](https://www.visualstudio.com/) click Launch when complete
+  - Goto VisualStudioCommunity | Extensions
+    - Click Gallery tab
+    - Enter 'MVVMCross' into the search box
+    
+8. From an iTerm2 console run the following:
+
   ```bash
-  $ cd ~/
-  $ sudo chown -R $(whoami) /usr/local
-  $ sudo chown -R $(whoami) /Users/$(whoami)
-
-  # instal git
-  $ brew install git
-
-  # install git gui command
-  $ cd /usr/local/bin/
-  $ ln -s ../Cellar/git/2.5.0/libexec/git-core/git-gui git-gui
-
-  # install node
-  $ cd ~/
-  $ brew install node
-
-  # fix permissions so npm install -g works without sudo
-  $ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
-
-  # install simple node version manager
-  $ npm install -g n
-  $ n stable
-
   # configure git
   $ git config --global user.name "Your Name Here"
   $ git config --global user.email your_email@example.com
@@ -108,9 +85,12 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   [[ -s ~/.bashrc ]] && source ~/.bashrc
   ```
 9. Edit .bashrc (nvm will write some of this during install)
+
   ```bash
-  source ~/.git-completion.sh
-  source ~/.git-prompt.sh
+  for file in /usr/local/etc/bash_completion.d/* ; do
+    source "$file"
+  done
+
   GIT_PS1_SHOWDIRTYSTATE=true
   GIT_PS1_SHOWSTASHSTATE=true
   GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -118,9 +98,12 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   GIT_PS1_SHOWUPSTREAM="verbose"
   PS1='\[\e[0;36m\]\w\[\e[0;32m\]$(__git_ps1 " (%s)")\n\[\e[1;31m\]\t\[\e[0m\] \$ '
 
+  export GEM_HOME=~/.gem
+  export GEM_PATH=~/.gem
+  export PATH="/usr/local/sbin:$PATH:~/.gem/bin"
+
   alias ll='ls -AlF'
   alias ls='ls -AF'
-  alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
 
   help()
   {
@@ -131,10 +114,19 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   {
     find / -name $1 2>/dev/null
   }
-  code()
+
+  newmac()
   {
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@";
+    # http://en.wikipedia.org/wiki/MAC_address#Address_details
+    ifconfig en1 ether `echo "$(echo -n fc ; openssl rand -hex 5)" | sed 's/\(..\)/\1:/g; s/.$//'`
   }
+
+  repostati()
+  {
+  find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;
+  }
+
+  cd ~/Development
   ```
 10. Restart iTerm window
   ```bash
