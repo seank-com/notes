@@ -130,6 +130,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   ```
 10. Restart iTerm window
   ```bash
+  gem install bropages
+  
+  
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
   Enter passphrase (empty for no passphrase): [Press enter]
