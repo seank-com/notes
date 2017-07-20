@@ -61,21 +61,6 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # you can use the following command
   #$ git config --global --unset-all core.editor
 
-  # install jslint
-  $ npm install jslint -g
-
-  # install node-inspector
-  $ npm install node-inspector -g
-
-  # if you get an error on the above do this and retry
-  $ sudo xcode-select -s /Application/Xcode.app/Contents/Developer
-
-  # if you install source tree (https://www.sourcetreeapp.com/)
-  $ ln -s /Applications/SourceTree.app/Contents/Resources/stree /usr/local/bin/
-
-  # download prompt
-  $ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o .git-prompt.sh
-  $ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o .git-completion.sh
   $ touch .bash_profile
   $ touch .bashrc
   $ atom .bash_profile .bashrc
@@ -123,15 +108,15 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
   repostati()
   {
-  find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;
+    find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;
   }
 
   cd ~/Development
   ```
 10. Restart iTerm window
   ```bash
-  gem install bropages
-  
+  # Must have bro pages
+  $ gem install bropages
   
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
