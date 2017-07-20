@@ -91,26 +91,31 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   ```
 
 6. Launch iTerm2
-  - Goto iTerm | Preferences | Profiles | Window
+  - Goto iTerm2 | Preferences | Profiles | Window
     - Adjust Transparency
-  - Goto iTerm | Preferences | Profiles | Terminal
+  - Goto iTerm2 | Preferences | Profiles | Terminal
     - Check Unlimited scrollback
   
   ```bash
   # Must have bro pages
   $ gem install bropages
-  
+
+  # The browser
+  $ brew cask install google-chrome
+
   # Other useful tools
   $ brew cask install android-file-transfer
   $ brew cask install dropbox
   $ brew cask install tresorit
   
-  $ brew cask install google-chrome
+  # Business Tools
   $ brew cask install microsoft-office
+  
+  # Development Tools
   $ brew cask install visual-studio-code
   $ brew cask install visual-studio
 
-  # configure git
+  # Configure git
   $ git config --global user.name "Your Name Here"
   $ git config --global user.email your_email@example.com
   $ git config --global color.ui auto
