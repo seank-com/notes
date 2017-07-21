@@ -107,6 +107,11 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install android-file-transfer
   $ brew cask install dropbox
   $ brew cask install tresorit
+  $ brew cask install toggldesktop
+  
+  # other tools
+  $ brew cask install osxfuse
+  $ brew cask install sshfs
   
   # Business Tools
   $ brew cask install microsoft-office
@@ -114,6 +119,8 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # Development Tools
   $ brew cask install visual-studio-code
   $ brew cask install visual-studio
+  $ brew cask install virtualbox
+  $ brew cask install arduino
 
   # Configure git
   $ git config --global user.name "Your Name Here"
@@ -159,13 +166,10 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
     - Click Gallery tab
     - Enter 'MVVMCross' into the search box
 
-EDIT HERE
-
-13. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+8. Download ISOs for ```virtualbox```
   - Download [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO) - *If you want to run a Windows 10 vm (useful for building Windows Phone versions of Cordova)*
-14. Install [Vagrant](https://www.vagrantup.com/downloads.html)
-15. Install [Android File Transfer](https://www.android.com/filetransfer/)
-16. Update hosts file
+9. Install [Vagrant](https://www.vagrantup.com/downloads.html)
+10. Update hosts file
   ```bash
   $ atom /etc/hosts
   ```
@@ -173,11 +177,7 @@ EDIT HERE
   ```
   127.0.0.1 local.<yourdomainname>.com
   ```
-17. Install [OSXFUSE](http://osxfuse.github.io/)
-18. Install SSHFS
-  ```bash
-  $ brew install homebrew/fuse/sshfs
-  ```
-19. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
-20. Install [Arduino IDE](https://www.arduino.cc/en/Main/Software)
-21. Install [USB to UART driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
+
+11. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
+
+12. Install [USB to UART driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
