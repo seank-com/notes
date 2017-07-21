@@ -120,6 +120,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install visual-studio-code
   $ brew cask install visual-studio
   $ brew cask install virtualbox
+  $ brew cask install docker
   $ brew cask install arduino
 
   # Configure git
@@ -155,21 +156,21 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ vs
   ```
 
-11. Goto [Github ssh settings](https://github.com/settings/ssh)
+7. Goto [Github ssh settings](https://github.com/settings/ssh)
   - Click New SSH key
   - Enter a name for your machine
   - Right click in key field and select Paste
   - Click Add SSH key
 
-7. From ```Visual Studio```
+8. From ```Visual Studio```
   - Goto VisualStudioCommunity | Extensions
     - Click Gallery tab
     - Enter 'MVVMCross' into the search box
 
-8. Download ISOs for ```virtualbox```
+9. Download ISOs for ```virtualbox```
   - Download [Windows 10 ISO](https://www.microsoft.com/en-us/software-download/windows10ISO) - *If you want to run a Windows 10 vm (useful for building Windows Phone versions of Cordova)*
-9. Install [Vagrant](https://www.vagrantup.com/downloads.html)
-10. Update hosts file
+10. Install [Vagrant](https://www.vagrantup.com/downloads.html)
+11. Update hosts file
   ```bash
   $ atom /etc/hosts
   ```
@@ -178,6 +179,6 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   127.0.0.1 local.<yourdomainname>.com
   ```
 
-11. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
+12. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
 
-12. Install [USB to UART driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
+13. Install [USB to UART driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
