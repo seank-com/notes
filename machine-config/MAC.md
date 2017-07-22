@@ -152,6 +152,12 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
   $ osascript -e 'tell app "Finder" to quit'
 
+  # To add a recent Applications folder to the dock
+  $ defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock
+  
+  # To make the docker show immediately when hidden rather than waiting 500ms
+  $ defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
+  
   # launch Visual Studio
   $ vs
   ```
