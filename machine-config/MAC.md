@@ -11,6 +11,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   ```bash
   $ brew install git
   $ brew install node
+  $ brew install bash-completion
   $ brew install brew-cask-completion
   $ brew cask install iterm2
   $ brew cask install atom
@@ -43,9 +44,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 5. Edit .bashrc (nvm will write some of this during install)
 
   ```bash
-  for file in /usr/local/etc/bash_completion.d/* ; do
-    source "$file"
-  done
+ [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
   GIT_PS1_SHOWDIRTYSTATE=true
   GIT_PS1_SHOWSTASHSTATE=true
@@ -122,6 +121,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install virtualbox
   $ brew cask install docker
   $ brew cask install arduino
+  
+  # Docker completion
+  $ curl -XGET https://raw.githubusercontent.com/docker/docker/master/contr‌​ib/completion/bash/d‌​ocker > `brew --prefix`/etc/bash_completion.d/docker
 
   # Configure git
   $ git config --global user.name "Your Name Here"
