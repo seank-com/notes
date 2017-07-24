@@ -123,7 +123,10 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install arduino
   
   # Docker completion
-  $ curl -XGET https://raw.githubusercontent.com/docker/docker/master/contr‌​ib/completion/bash/d‌​ocker > `brew --prefix`/etc/bash_completion.d/docker
+  $ cd /usr/local/etc/bash_completion.d
+  $ ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+  $ ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+  $ ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
 
   # Configure git
   $ git config --global user.name "Your Name Here"
