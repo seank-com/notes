@@ -133,6 +133,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ git config --global user.email your_email@example.com
   $ git config --global color.ui auto
   $ git config --global push.default simple
+  $ git config --global core.filemode false
 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
