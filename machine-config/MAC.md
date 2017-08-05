@@ -13,9 +13,10 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew install node
   $ brew install bash-completion
   $ brew install brew-cask-completion
+  $ brew install youtube-dl
   $ brew cask install iterm2
   $ brew cask install atom
-  $ touch .bash_profile
+  $ touch .bash_profcd ~ile
   $ touch .bashrc
   $ mkdir ~/Development
   $ atom .bash_profile .bashrc & exit
@@ -44,7 +45,10 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 5. Edit .bashrc (nvm will write some of this during install)
 
   ```bash
- [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+  if [ $HOME = /Users/seank ]
+  then
+  
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
   GIT_PS1_SHOWDIRTYSTATE=true
   GIT_PS1_SHOWSTASHSTATE=true
@@ -86,7 +90,28 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
     open /Applications/Visual\ Studio.app
   }
 
+  vb()
+  {
+    open open /Applications/VirtualBox.app
+  }
+
+  cd-casks()
+  {
+    cd "$(brew --repository)"/Library/Taps/caskroom/homebrew-cask
+  }
+
+  azure-cli()
+  {
+    if [[ $(docker ps -aqf name=azure-cli) =~ ^[:space:]*$ ]]; then
+      docker run --name azure-cli -v ${HOME}:/root -it azuresdk/azure-cli-python:latest
+    else
+      docker start -ai azure-cli
+    fi    #statements
+  }
+  
   cd ~/Development
+  
+  fi
   ```
 
 6. Launch iTerm2
@@ -102,25 +127,37 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # The browser
   $ brew cask install google-chrome
 
+  
+
   # Other useful tools
   $ brew cask install android-file-transfer
   $ brew cask install dropbox
   $ brew cask install tresorit
   $ brew cask install toggldesktop
+  $ brew cask install private-internet-access
+  $ brew cask install vlc
+  $ brew cask install slack
+  $ brew cask install logos
+  $ brew cask install keka
+  $ brew cask install namechanger     
   
   # other tools
   $ brew cask install osxfuse
   $ brew cask install sshfs
+  $ brew cask install qbittorrent
+  $ brew cask install drobo-dashboard
   
   # Business Tools
   $ brew cask install microsoft-office
-  
+  $ brew cask install skype-for-business
+
   # Development Tools
   $ brew cask install visual-studio-code
-  $ brew cask install visual-studio
+  #$ brew cask install visual-studio
   $ brew cask install virtualbox
   $ brew cask install docker
   $ brew cask install arduino
+  $ brew cask install hex-fiend                  
   
   # Docker completion
   $ cd /usr/local/etc/bash_completion.d
@@ -195,3 +232,5 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 12. Goto System Preferences | Mission Control and change Show Desktop and Show Dashboard key board shortcuts (F11 is needed to "Step In" when debugging in Chrome)
 
 13. Install [USB to UART driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
+
+14.  Install [KeepassX](https://www.keepassx.org/downloads/0-4)
