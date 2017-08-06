@@ -16,7 +16,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew install youtube-dl
   $ brew cask install iterm2
   $ brew cask install atom
-  $ touch .bash_profcd ~ile
+  $ touch .bash_profile
   $ touch .bashrc
   $ mkdir ~/Development
   $ atom .bash_profile .bashrc & exit
@@ -150,6 +150,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # Business Tools
   $ brew cask install microsoft-office
   $ brew cask install skype-for-business
+  $ brew cask install microsoft-teams
 
   # Development Tools
   $ brew cask install visual-studio-code
