@@ -137,6 +137,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install private-internet-access
   $ brew cask install vlc
   $ brew cask install slack
+  $ brew cask install gitter
   $ brew cask install logos
   $ brew cask install keka
   $ brew cask install namechanger     
