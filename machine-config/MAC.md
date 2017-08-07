@@ -145,7 +145,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install osxfuse
   $ brew cask install sshfs
   $ brew cask install qbittorrent
-  $ brew cask install drobo-dashboard
+  $ brew cask install caskroom/drivers/drobo-dashboard
   
   # Business Tools
   $ brew cask install microsoft-office
