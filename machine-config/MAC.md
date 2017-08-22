@@ -174,6 +174,8 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ git config --global push.default simple
   $ git config --global core.filemode false
   $ git config --global fetch.prune true
+  $ git config --global core.autocrlf true
+  $ git config --global core.safecrlf true
 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
