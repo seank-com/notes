@@ -175,7 +175,8 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ git config --global push.default simple
   $ git config --global core.filemode false
   $ git config --global fetch.prune true
-  $ git config --global core.autocrlf true
+  # see http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+  $ git config --global core.autocrlf input
   $ git config --global core.safecrlf true
 
   # adds git lga command (try it, you'll love it)
