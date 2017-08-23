@@ -157,6 +157,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install visual-studio-code
   #$ brew cask install visual-studio
   $ brew cask install virtualbox
+  $ brew cask install virtualbox-extension-pack
   $ brew cask install docker
   $ brew cask install arduino
   $ brew cask install hex-fiend                  
