@@ -8,6 +8,12 @@ Here I document install steps, scripts and settings I use for each platform I wo
 ## [Cloud](machine-config/Cloud.md)
 ## [Azure](azure/README.md)
 
+# Travel
+
+My notes on traveling abroad to places (thanks to business) that I visit often.
+
+## [ShenZhen, China](travel/ShenZhen.md)
+
 # Technologies
 
 ## React / Redux
