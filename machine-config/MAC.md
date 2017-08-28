@@ -157,6 +157,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install visual-studio-code
   #$ brew cask install visual-studio
   $ brew cask install virtualbox
+  $ brew cask install virtualbox-extension-pack
   $ brew cask install docker
   $ brew cask install arduino
   $ brew cask install hex-fiend                  
@@ -174,6 +175,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ git config --global push.default simple
   $ git config --global core.filemode false
   $ git config --global fetch.prune true
+  # see http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+  $ git config --global core.autocrlf input
+  $ git config --global core.safecrlf true
 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
