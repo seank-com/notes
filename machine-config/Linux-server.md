@@ -1,4 +1,4 @@
-# Linux Configuration
+# Linux Server Configuration
 
 Configuration steps, scripts and tools i use on linux machines. Feel free to skip any steps that don't work for you or add steps if you think something is missing.
 
@@ -33,7 +33,7 @@ Boot ISO
 
 ## Configure ssh Identity
 
-On you development machine run the following from a bash shell to generate a certificate
+On your development machine run the following from a bash shell to generate a certificate
 
 ```
 # when prompted for a filename enter server-access-key.pem
@@ -269,7 +269,7 @@ Paste the following
   delaycompress
   notifempty
   create 0764 www-data www-data
-  mail home@seank.com
+  mail your_email@example.com
   mailfirst
   prerotate
     initctl stop nodeserver >/dev/null 2>&1
