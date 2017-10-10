@@ -140,7 +140,8 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install gitter
   $ brew cask install logos
   $ brew cask install keka
-  $ brew cask install namechanger     
+  $ brew cask install namechanger
+  $ brew cask install disk-inventory-x
   
   # other tools
   $ brew cask install osxfuse
