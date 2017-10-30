@@ -156,7 +156,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
   # Development Tools
   $ brew cask install visual-studio-code
+  #$ brew cask install unity
   #$ brew cask install visual-studio
+  #$ brew cask install intel-haxm
   $ brew cask install virtualbox
   $ brew cask install virtualbox-extension-pack
   $ brew cask install docker
