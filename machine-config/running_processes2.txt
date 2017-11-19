@@ -1,0 +1,5 @@
+  581 ?        S      0:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-enp0s20u1.pid -lf /var/lib/NetworkManager/dhclient-1fdacf9d-eaab-309c-94b2-eb93e46f9431-enp0s20u1.lease -cf /var/lib/NetworkManager/dhclient-enp0s20u1.conf enp0s20u1
+  893 ?        Ssl    0:11 /usr/sbin/NetworkManager --no-daemon
+ 1324 ?        S      0:07 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.1.1 --cache-size=0 --conf-file=/dev/null --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+ 2247 ?        S      0:15 /usr/sbin/dnsmasq --conf-file --no-hosts --keep-in-foreground --bind-interfaces --except-interface=lo --clear-on-reload --strict-order --listen-address=192.168.69.1 --dhcp-range=192.168.69.10,192.168.69.254,60m --dhcp-option=option:router,192.168.69.1 --dhcp-lease-max=50 --pid-file=/var/run/nm-dnsmasq-wlp2s0b1.pid --conf-dir=/etc/NetworkManager/dnsmasq-shared.d
+ 2693 pts/2    S+     0:00 grep --color=auto NetworkManager

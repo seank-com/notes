@@ -1,0 +1,286 @@
+    1  ip addr
+    2  sudo ip link set dev wlp2s0b1 down
+    3  sudo iwconfig wlp2s0b1 mode master
+    4  sudo ip link set dev wlp2s0b1 down && sudo iwconfig wlp2s0b1 mode master
+    5  sudo vim /etc/network/interfaces
+    6  nano
+    7  sudo nano /etc/network/interfaces
+    8  ifconfig -a | grep eth
+    9  ifconfig
+   10  ping 192.168.42.115
+   11  ping 192.168.42.1
+   12  sudo lshw -class network
+   13  sudo add-apt-repository ppa:webupd8team/atom
+   14  sudo apt-get update
+   15  sudo apt-get install atom
+   16  pwd
+   17  atom .
+   18  cd Desktop/
+   19  atom notes.md
+   20  atom /etc/network/interfaces
+   21  sudo ethtool enp1s0
+   22  sudo ethtool enp0s20u4u4
+   23  sudo ethtool enp3s0
+   24  sudo ethtool wlp2s0b1
+   25  de /etc
+   26  ls /etc
+   27  ls /run
+   28  cat /run/resolvconf/resolv.conf 
+   29  apt install
+   30  sudo apt install
+   31  man apt
+   32  sudo apt list --installed
+   33  atom /etc/issue
+   34  sudo atom /etc/issue
+   35  sudo atom /etc/lightdm/lightdm.conf
+   36  sudo apt list --installed | grep AccountService
+   37  sudo apt list --installed
+   38  exit
+   39  cat /etc/issue
+   40  uname -m
+   41  ls /org
+   42  ls /
+   43  atom Desktop/notes.md 
+   44  sudo apt list --installed
+   45  cat /etc/issue
+   46  ls /etc
+   47  ls /etc/lightdm/
+   48  cat /etc/lightdm/users.conf 
+   49  ls
+   50  mkdir Development
+   51  cd Development/
+   52  git clone https://github.com/seank-com/notes.git
+   53  cd notes/
+   54  ls
+   55  cd machine-config/
+   56  ls
+   57  git pull
+   58  ls
+   59  atom router.md 
+   60  cd Development/
+   61  sudo atom notes/
+   62  sudo apt-get update
+   63  sudo apt-get upgrade
+   64  sudo apt-get dist-upgrade
+   65  sudo apt autoremove
+   66  sudo reboot
+   67  exit
+   68  history
+   69  sudo atom ~/Development/notes/
+   70  sudo visudo
+   71  pwd
+   72  cd Development/
+   73  cd notes/
+   74  mkdir ~/Development/notes/data
+   75  cd data/
+   76  sudo app list --installed >installed_packages.txt
+   77  sudo apt list --installed >installed_packages.txt
+   78  sudo atom installed_packages.txt 
+   79  sudo apt-get help
+   80  man apt-get
+   81  dpkg --get-selections | grep -v deinstall
+   82  dpkg --get-selections | grep -v deinstall >installed_packages.txt
+   83  ps -a
+   84  ps -A
+   85  sudo ps -A >running_processes.txt
+   86  ps -A >running_processes2.txt
+   87  diff running_processes.txt running_processes2.txt 
+   88  ps -A >running_processes.txt
+   89  history
+   90  man nmcli
+   91  exit
+   92  ip addr
+   93  cat /etc/network/interfaces
+   94  ethtool
+   95  ethtool enp1s0
+   96  ethtool enp3s0
+   97  nmcli radio all
+   98  nmcli monitor
+   99  nmcli connection show
+  100  nmcli general logging
+  101  nmcli general status
+  102  nmcli device
+  103  ifconfig
+  104  ifconfig
+  105  sudo service resolveconf restart
+  106  sudo service resolvconf restart
+  107  sudo service networking restart
+  108  sudo service resolvconf restart
+  109  sudo service networking restart
+  110  ifconfig
+  111  sudo reboot
+  112  cd Development/
+  113  sudo atom notes/
+  114  exit
+  115  cat /etc/resolv.conf 
+  116  cd /etc/NetworkManager/
+  117  ls
+  118  cd system-connections/
+  119  ls
+  120  cd ..
+  121  cd dnsmasq-shared.d/
+  122  ls
+  123  man nm-settings
+  124  ifconfig
+  125  cd /etc/dnsmasq.d
+  126  ls
+  127  cat network-manager 
+  128  nm-tool
+  129  nm-connection-editor
+  130  cd /etc/
+  131  bro
+  132  find . -name 'iptables'
+  133  sudo find . -name 'iptables'
+  134  iptables
+  135  iptables --help
+  136  iptables -L
+  137  sudo iptables -L
+  138  sudo iptables -S
+  139  route
+  140  man networkmanager
+  141  man networkmanager.conf
+  142  ps -A
+  143  history
+  144  ps -A | grep dnsmasq
+  145  ps ax
+  146  ps ax | grep dnsmasq
+  147  sudo iptables -L
+  148  sudo iptables -S
+  149  man nmcli
+  150  nmcli connection show
+  151  nmcli connection show 78080134-7f82-4944-b0be-6dd268e2f5b8
+  152  nmcli --help
+  153  nmcli c -h
+  154  nmcli c modify 78080134-7f82-4944-b0be-6dd268e2f5b8 ipv4.addresses 192.168.69.1/24
+  155  reboot
+  156  ps ax | grep dnsmasq
+  157  sudo reboot
+  158  cd /etc/NetworkManager/
+  159  ls
+  160  cd dispatcher.d/
+  161  ls
+  162  sudo atom .
+  163  exit
+  164  cat /etc/network/interfaces
+  165  route
+  166  sudo iptables -s
+  167  sudo iptables -S
+  168  sudo netstat -plnt
+  169  atom Development/notes/
+  170  history
+  171  ps ax >Development/notes/data/running_processes2.txt 
+  172  man ps
+  173  man netstat
+  174  netstat -r
+  175  route
+  176  man netstat
+  177  man netstat -p
+  178  netstat -p
+  179  netstat -pl
+  180  netstat -pn
+  181  netstat -pt
+  182  netstat -plt
+  183  netstat -plnt
+  184  man netstat
+  185  netstat -Plnt
+  186  netstat -plnt
+  187  sudo netstat -plnt
+  188  sudo netstat -p
+  189  sudo netstat -pt
+  190  sudo netstat -plt
+  191  man netstat
+  192  sudo netstat -pln
+  193  man netstat
+  194  [s ax
+  195  ps ax
+  196  ps ax | grep dns
+  197  ps ax | grep network
+  198  ps ax | grep net
+  199  sudo ps ax | grep net
+  200  sudo ps ax | grep nm
+  201  man nm-applet
+  202  man networkmanager
+  203  ps ax | grep networkmanager
+  204  sudo ps ax | grep networkmanager
+  205  man networkmanager
+  206  sudo ps ax | grep NetworkManager
+  207  sudo ps ax | grep NetworkManager >~/Development/notes/data/running_processes2.txt 
+  208  mas ps
+  209  man ps
+  210  ps -ef
+  211  ps -ef | grep NetworkManager
+  212  man nmcli
+  213  ps -ef
+  214  ps -ef >~/Development/notes/data/running_processes.txt 
+  215  cat /etc/rchkconfig -list iptables
+  216  chkconfig -list iptables
+  217  man iptables
+  218  ufw
+  219  man ufw
+  220  cd /etc/ufw/
+  221  ls
+  222  sudo atom .
+  223  sudo ufw status
+  224  sudo reboot
+  225  nmcli status
+  226  nmcli general status
+  227  nmcli connection show
+  228  nmcli connection up 78080134-7f82-4944-b0be-6dd268e2f5b8
+  229  sudo cat /etc/NetworkManager/system-connections/Wi-Fi\ Hotspot 
+  230  sudo atom /etc/NetworkManager/system-connections/Wi-Fi\ Hotspot 
+  231  sudo reboot
+  232  man nmcli
+  233  atom Development/notes
+  234  sudo cat /etc/NetworkManager/system-connections/Wi-Fi\ Hotspot 
+  235  exit
+  236  ifconfig
+  237  atom lan\ notes
+  238  ifconfig
+  239  ifconfig /renew
+  240  man ifconfig
+  241  ls
+  242  cat examples.desktop 
+  243  sudo iptables -L
+  244  history | grep iptables
+  245  sudo iptables -S
+  246  cd /etc/NetworkManager/
+  247  ls
+  248  cd dispatcher.d/
+  249  ls
+  250  sudo atom .
+  251  gufw
+  252  ufw
+  253  ps ax
+  254  history | grep netstat
+  255  netstat -plnt
+  256  ls /usr/lib/systemd/system | grep dns
+  257  find /usr/lib/systemd/ -name "*dns*"
+  258  ps ax | grep dns
+  259  cd Development/notes/
+  260  atom .
+  261  ps -af | grep dnsmasq
+  262  ps -af | grep dnsm
+  263  ps -af | grep dns
+  264  ps -ef | grep dns
+  265  route
+  266  sudo iptables -L -nv
+  267  sudo iptables -t nat -nv -L
+  268  route
+  269  sudo iptables -save
+  270  sudo iptables-save
+  271  history
+  272  ls
+  273  cat examples.desktop 
+  274  ls
+  275  atom lan notes
+  276  git gui
+  277  sudo apt-get install git-gui
+  278  cd /Development
+  279  ls
+  280  cd Development
+  281  ls
+  282  cd notes/
+  283  git pull
+  284  git gui
+  285  cd data
+  286  history >history

@@ -1,0 +1,45 @@
+watchdog	192.168.42.2	00:23:63:2A:DF:ED
+
+keeper	192.168.42.3	00:1A:62:01:17:CF
+
+seans-mac	192.168.42.20	38:c9:86:37:13:a1
+
+printer	192.168.42.4	00:9C:02:0A:53:50
+
+seans-ipad	192.168.42.21	70:DE:E2:5D:C9:90
+
+lisas-chrome	192.168.42.31	74:C6:3B:70:6d:E1
+
+lisas-pc	192.168.42.30	00:26:18:46:3E:08
+
+lisas-ipad	192.168.42.32	1C:E6:2B:BC:13:8C
+
+seans-android	192.168.42.22	68:C4:4D:9F:09:44
+
+lisas-android	192.168.42.33	68:C4:4D:A4:D1:F8
+
+abis-android	192.168.42.60	14:30:C6:C7:D8:88
+
+seans-mac-wifi	192.168.42.23	f4:5c:89:a0:c4:c3
+
+hannahs-mac	192.168.42.50	68:A8:6D:39:D8:82
+
+seans-alexa	192.168.42.24	00:BB:3A:8F:E2:FE
+
+micahs-pc	192.168.42.40	C4:6E:1F:1F:A2:FA
+
+micahs-chrome	192.168.42.41	34:23:87:2F:36:A1
+
+micahs-android	192.168.42.42	44:80:eb:95:2a:b4
+
+chromecast	192.168.42.5	6C:AD:F8:27:20:35
+
+hannahs-android	192.168.42.51	68:c4:4d:13:d0:49
+
+sarahs-ipad	192.168.42.90	b4:18:d1:9d:f4:a1
+
+hannahs-pc	192.168.42.52	00:db:df:86:a0:79
+
+miriams-chrome	192.168.42.80	7c:b0:c2:76:06:6a
+
+micahs-new-andr	192.168.42.43	84:10:0d:66:86:b6
