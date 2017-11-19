@@ -15,8 +15,20 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ sudo apt-get upgrade
   $ sudo apt-get dist-upgrade
 
+  # If Ubuntu is running in a VirtualBox VM
+  # Insert guess extensions here, intsall and restart
+
   # install git
   $ sudo apt-get install git-gui
+
+  # install Docker
+  $ sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  $ sudo apt-key fingerprint 0EBFCD88
+  $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  $ sudo apt-get update
+  $ sudo apt-get install docker-ce
+  $ sudo docker run hello-world
 
   # install Atom
   $ sudo add-apt-repository ppa:webupd8team/atom
@@ -26,6 +38,8 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   # install Bro Pages (pay attention to any warning about updating your path)
   $ sudo apt-get install ruby-dev
   $ gem install --user-install bropages
+
+  $ sudo apt autoremove
 
   $ mkdir ~/Development
   $ atom .bashrc & exit
@@ -54,7 +68,7 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
 
   # don't run if not on host
   if [ $HOME != /home/seank ]; then
-    exit 0
+    return 0;
   fi
 
   export PATH="$PATH:~/.gem/ruby/2.3.0/bin"

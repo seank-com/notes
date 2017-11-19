@@ -4,7 +4,7 @@ Here I document install steps, scripts and settings I use for each platform I wo
 
 ## [Mac](machine-config/MAC.md)
 ## [Windows](machine-config/Windows.md)
-## [Linux](machine-config/Linux.md)
+## Linux [Desktop](machine-config/Linux-desktop.md) [Server](machine-config/Linux-server.md)
 ## [Cloud](machine-config/Cloud.md)
 ## [Azure](azure/README.md)
 
@@ -13,6 +13,14 @@ Here I document install steps, scripts and settings I use for each platform I wo
 My notes on traveling abroad to places (thanks to business) that I visit often.
 
 ## [ShenZhen, China](travel/ShenZhen.md)
+
+# Tips and tricks
+
+### Replace CRLF with LF
+
+```
+perl -i.org -pe 's/\r\n/\n/' filename
+```
 
 # Technologies
 
