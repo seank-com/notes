@@ -28,7 +28,50 @@ all connections across to the internet between the DSL Modem and Tethered Tablet
 the wireless access points (purple boxes) and One for the wire connected devices
 (yellow boxes).
 
-![](network_topo.svg)
+```mermaid
+graph LR
+  mdm(DSL Modem)---router(Ubuntu based router)
+  tablet(Tethered Tablet)---router
+  ap0(Built-in Wireless AP)---router
+  router---switch1(Managed 8 port switch);
+
+  ap1(Wireless Access Point)---switch2("Managed 5 port switch (Den)");
+  nas(NAS Drive)---switch2;
+  cpu1(Linux Desktop PC)---switch2;
+  cpu2("Mac Laptop (docked)")---switch2;
+
+  switch2---switch1
+  switch1---switch3("Managed 5 port switch (Bedroom)");
+  switch1---switch4("Managed 5 port switch (Kitchen)");
+
+  switch3---switch5("Manage 5 port switch (Bedroom2)");
+  switch3---wdtv(WDTV Media Player);
+
+  switch4---ap2(Wireless Access Point)
+  switch4---cpu4(Windows PC)
+
+  switch5---cpu3(Windows PC);
+  switch5---ap3(Wireless Access Point)
+
+  style mdm fill:#e00
+  style tablet fill:#e00
+  style ap0 fill:#0ee
+  style ap1 fill:#e0e
+  style ap2 fill:#e0e
+  style ap3 fill:#e0e
+  style router fill:#0e0
+  style switch1 fill:#0ee
+  style switch2 fill:#0ee
+  style switch3 fill:#0ee
+  style switch4 fill:#0ee
+  style switch5 fill:#0ee
+  style cpu1 fill:#ee0
+  style cpu2 fill:#ee0
+  style cpu3 fill:#ee0
+  style cpu4 fill:#ee0
+  style nas fill:#ee0
+  style wdtv fill:#ee0
+```
 
 ## Install Ubuntu from Live USB Drive
 
@@ -149,7 +192,7 @@ figure out where everything is and what it is called.
 
   You should see something like this
   ```
-  *-network               
+  *-network
      description: Ethernet interface
      product: RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
      ...
