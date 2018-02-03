@@ -146,7 +146,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   git config --global color.ui auto
   git config --global push.default simple
   git config --global alias.lga "log --graph --oneline --all --decorate"
-  ```
+  git config --global core.autocrlf true
+  git config --global core.safecrlf true
+  ```  
 
 12. Launch Git bash
 
