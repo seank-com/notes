@@ -24,6 +24,10 @@ perl -i.org -pe 's/\r\n/\n/' filename
 
 # Technologies
 
+## Vue
+
+See [Vue's framework comparison](https://vuejs.org/v2/guide/comparison.html) or better yet, read the [guide](https://vuejs.org/v2/guide/). Take a look at the Vue [community resource](https://github.com/vuejs/awesome-vue). State management is handled by either [Vuex]() Vue's Flux/Redux/Elm inspired implementation, or [vue-router](https://github.com/vuejs/vue-router) which is documented [here](http://router.vuejs.org/en/index.html)
+
 ## React / Redux
 
 Redux Principles
