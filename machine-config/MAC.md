@@ -104,9 +104,14 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   {
     if [[ $(docker ps -aqf name=azure-cli) =~ ^[:space:]*$ ]]; then
       docker run --name azure-cli -v ${HOME}:/root -it azuresdk/azure-cli-python:latest
+  ms-sql()
+  {
+    if [[ $(docker ps -aqf name=ms-sql) =~ ^[:space:]*$ ]]; then
+      docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Abcd.123' -p 1433:1433 --name ms-sql -d microsoft/mssql-server-linux:latest
     else
-      docker start -ai azure-cli
-    fi    #statements
+      docker start -ai ms-sql
+    fi
+  }
   }
   
   cd ~/Development
@@ -142,13 +147,13 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install keka
   $ brew cask install namechanger
   $ brew cask install disk-inventory-x
-  
+
   # other tools
   $ brew cask install osxfuse
   $ brew cask install sshfs
   $ brew cask install qbittorrent
   $ brew cask install caskroom/drivers/drobo-dashboard
-  
+
   # Business Tools
   $ brew cask install microsoft-office
   $ brew cask install skype-for-business
@@ -159,12 +164,13 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   #$ brew cask install unity
   #$ brew cask install visual-studio
   #$ brew cask install intel-haxm
+  $ brew cask install sql-operations-studio
   $ brew cask install virtualbox
   $ brew cask install virtualbox-extension-pack
   $ brew cask install docker
   $ brew cask install arduino
   $ brew cask install hex-fiend                  
-  
+
   # Docker completion
   $ cd /usr/local/etc/bash_completion.d
   $ ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
