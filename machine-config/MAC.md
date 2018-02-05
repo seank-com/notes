@@ -21,11 +21,11 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ mkdir ~/Development
   $ atom .bash_profile .bashrc & exit
   ```
-4. In ```atom``` 
+4. In ```atom```
   - Goto Atom | Preferences | Install
     - Enter merge-conflicts and press Packages
     - Install merge-conflicts package
-    - repeat for find-selection, sort-lines & atom-mermaid
+    - repeat for find-selection, sort-lines, remote-atom & markdown-preview-enhanced
   - Goto Atom | Preferences | Open Config Folder
     - Click keymap.cson and append the following    
       ```coffee
