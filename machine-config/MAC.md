@@ -37,7 +37,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
         'alt-cmd-j': 'find-selection:find-previous-casesensitive'
         'alt-cmd-k': 'find-selection:find-next-casesensitive'
       ```
-  
+
 4. Edit .bash_profile (see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html) for details)
   ```bash
   [[ -s ~/.bashrc ]] && source ~/.bashrc
@@ -47,7 +47,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   ```bash
   if [ $HOME = /Users/seank ]
   then
-  
+
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
   GIT_PS1_SHOWDIRTYSTATE=true
@@ -80,11 +80,11 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
     ifconfig en1 ether `echo "$(echo -n fc ; openssl rand -hex 5)" | sed 's/\(..\)/\1:/g; s/.$//'`
   }
 
-  repostati()
+  notin()
   {
     find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git status -s && echo)' \;
   }
-  
+
   vs()
   {
     open /Applications/Visual\ Studio.app
@@ -102,8 +102,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
   azure-cli()
   {
-    if [[ $(docker ps -aqf name=azure-cli) =~ ^[:space:]*$ ]]; then
-      docker run --name azure-cli -v ${HOME}:/root -it azuresdk/azure-cli-python:latest
+    docker run --rm -v ${HOME}:/root -it azuresdk/azure-cli-python:latest    #statements
+  }
+
   ms-sql()
   {
     if [[ $(docker ps -aqf name=ms-sql) =~ ^[:space:]*$ ]]; then
@@ -112,10 +113,24 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
       docker start -ai ms-sql
     fi
   }
+
+  fix-crlf()
+  {
+    perl -i.org -pe 's/\r\n/\n/' $1
   }
-  
+
+  ld()
+  {
+    find . -maxdepth 1 -type d
+  }
+
+  lf()
+  {
+    find . -maxdepth 1 -type f
+  }
+
   cd ~/Development
-  
+
   fi
   ```
 
@@ -124,7 +139,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
     - Adjust Transparency
   - Goto iTerm2 | Preferences | Profiles | Terminal
     - Check Unlimited scrollback
-  
+
   ```bash
   # Must have bro pages
   $ gem install bropages
@@ -132,7 +147,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # The browser
   $ brew cask install google-chrome
 
-  
+
 
   # Other useful tools
   $ brew cask install android-file-transfer
@@ -213,10 +228,10 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
   # To add a recent Applications folder to the dock
   $ defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'; killall Dock
-  
+
   # To make the docker show immediately when hidden rather than waiting 500ms
   $ defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
-  
+
   # launch Visual Studio
   $ vs
   ```
