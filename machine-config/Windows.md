@@ -10,7 +10,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   - Goto File | Settings | Install
     - Enter merge-conflicts and press Packages
     - Install merge-conflicts package
-    - repeat for file-types, find-selection, jsonlint, & sort-lines
+    - repeat for find-selection, sort-lines, & markdown-preview-enhanced
   - Goto Atom | Preferences | Open Config Folder
     - Click config.cson and edit so it looks generally like this
     
