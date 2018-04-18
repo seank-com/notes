@@ -10,7 +10,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   - Goto File | Settings | Install
     - Enter merge-conflicts and press Packages
     - Install merge-conflicts package
-    - repeat for file-types, find-selection, jsonlint, & sort-lines
+    - repeat for find-selection, sort-lines, & markdown-preview-enhanced
   - Goto Atom | Preferences | Open Config Folder
     - Click config.cson and edit so it looks generally like this
     
@@ -40,8 +40,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
       ```
 4. Install [Visual Studio Code](https://code.visualstudio.com/Download)
 5. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-6. Install [Vagrant](https://www.vagrantup.com/downloads.html)
-7. Install [Git](https://git-scm.com/)
+6. Install [Git](https://git-scm.com/)
 
   - Select Components
 
@@ -65,7 +64,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     *we'll be setting up ssh keys*
 
-8. Launch an elevated command prompt
+7. Launch an elevated command prompt
 
   Press Win-X and select 'Command Prompt (Admin)'
 
@@ -80,7 +79,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
   ```
   @echo off
-  set PATH=%PATH%;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\HashiCorp\Vagrant\bin;%APPDATA%\npm;%LOCALAPPDATA%\atom\bin;C:\Program Files (x86)\Microsoft VS Code\bin;%~dp0
+  set PATH=%PATH%;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;%~dp0
   set NODE_PATH=%APPDATA%\npm\node_modules
   if exist "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat"
   alias -f "%USERPROFILE%\Bin\cmds.lst"
@@ -98,7 +97,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   dev  pushd "%USERPROFILE%\Development"
   ```
 
-9. Create a shortcut on your desktop with the following Target
+8. Create a shortcut on your desktop with the following Target
 
   Right click on your desktop and select New | Shortcut
 
@@ -113,7 +112,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   Right click the icon and select Properties.
   Click the Advanced button and check 'Run as administrator'
 
-10. Remove paths from system settings
+9. Remove paths from system settings
 
   From Win-X | System | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
 
@@ -135,7 +134,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   C:\HashiCorp\Vagrant\bin;
   ```
 
-11. Launch the dev window from the shortcut
+10. Launch the dev window from the shortcut
 
   configure git with the following commands
 
@@ -150,7 +149,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   git config --global core.safecrlf true
   ```  
 
-12. Launch Git bash
+11. Launch Git bash
 
   Press the Win key and type 'git' right click Git Bash and select pin to taskbar then click the button on the taskbar
 
@@ -166,13 +165,13 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   $ clip < ~/.ssh/id_rsa.pub
   ```
 
-13. Goto [Github ssh settings](https://github.com/settings/ssh)
+12. Goto [Github ssh settings](https://github.com/settings/ssh)
   - Click New SSH key
   - Enter a name for your machine
   - Right click in key field and select Paste
   - Click Add SSH key
 
-14. Update hosts file
+13. Update hosts file
 
   Enter the following command in your dev window
 
