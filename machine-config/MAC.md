@@ -64,6 +64,15 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   alias ll='ls -AlF'
   alias ls='ls -AF'
 
+  # docker remove
+  alias drm="docker container prune -f"
+  # docker remove image
+  alias dri="docker image prune -f"
+  # docker interactive
+  alias dki="docker run -itP"
+  # docker exec
+  alias dke="docker exec -it"
+
   help()
   {
     man -t $1 | open -f -a /Applications/Preview.app
@@ -129,6 +138,14 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
     find . -maxdepth 1 -type f
   }
 
+  dtags()
+  {
+      local image="${1}"
+      curl -s -S "https://registry.hub.docker.com/v2/repositories/library/${image}/tags/" \
+      | jq '."results"[]["name"]' \
+      | sort
+  }
+
   cd ~/Development
 
   fi
@@ -150,6 +167,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
 
   # Other useful tools
+  $ brew install jq             
   $ brew cask install android-file-transfer
   $ brew cask install dropbox
   $ brew cask install tresorit
@@ -184,7 +202,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install virtualbox-extension-pack
   $ brew cask install docker
   $ brew cask install arduino
-  $ brew cask install hex-fiend                  
+  $ brew cask install hex-fiend     
 
   # Docker completion
   $ cd /usr/local/etc/bash_completion.d

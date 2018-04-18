@@ -9,14 +9,13 @@ _Note:_ Adafruit has an excellent [tutorial](https://learn.adafruit.com/node-emb
 ## Configure Raspbian
 
 - Open a terminal window and run the following command ```sudo raspi-config```
-- Select 9 Advanced Options | A0 update
-- Close raspi-config and reopen
-- Select 1 Expand Filesystem
-- Select 3 Boot options | B1 Console
-- Select 5 Internationalisation Options | I1 Change Locale then de-select en_GB.UTF-8 and select en_US.UTF-8 instead
-- Select 5 Internationalisation Options | I2 Change Timezone | US | Pacific Ocean
-- Select 9 Advanced Options | A3 Memory Split | 0
-- Select 9 Advanced Options | A4 SSH | Enable
+- Select 7 Advanced Options | A1 Expand Filesystem
+- Select 3 Boot options | B1 Desktop / CLI | B1 Console
+- Select 4 Localisation Options | I1 Locale
+  - then de-select en_GB.UTF-8 and select en_US.UTF-8 instead
+- Select 4 Localisation Options | I2 Change Timezone | US | Pacific Ocean
+- Select 7 Advanced Options | A3 Memory Split | 0
+- Select 5 Interfacing Options | P2 SSH | Yes
 - Select Finish and reboot
 
 ## Configure ssh
@@ -82,6 +81,52 @@ add the following line just before the ```exit 0```
 
 ```
 echo -n 1 > /sys/module/i2c_bcm2708/parameters/combined
+```
+
+## Setting up Kubernetes
+
+Here are the steps, but it will likely not work. I ended up using [this guide](https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/) instead.
+
+```bash
+$ sudo nano /boot/cmdline.txt
+```
+
+add ```cgroup_enable=memory cgroup_memory=1``` before ```rootwait``` and save
+
+```bash
+# disable swap
+$ sudo chmod -x /etc/init.d/dphys-swapfile
+$ sudo swapoff -a
+$ sudo rm /var/swap
+
+# install docker
+$ sudo curl -sSL https://get.docker.com | sh
+$ sudo usermod -aG docker pi
+$ sudo /etc/init.d/docker start
+
+# install kubeadm
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+$ cat <<EOF >kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+$ sudo mv kubernetes.list /etc/apt/sources.list.d/
+$ sudo apt-get update
+$ sudo apt-get install -y policykit-1 kubelet kubeadm kubectl
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart kubelet
+
+# run on master
+$ sudo kubeadm init --pod-network-cidr=192.168.1.0/24
+$ mkdir -p $HOME/.kube
+$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+$ curl -sSL https://rawgit.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml | sed "s/amd64/arm/g" >kube-flannel.yml
+$ kubectl apply -f kube-flannel.yml
+
+# the kubeadm init above should print a command like the following to run on each of the worker nodes
+$ kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
+
+$ kubeadm join --token e15d07.86cd214c6d788319 192.168.1.100:6443 --discovery-token-ca-cert-hash sha256:398d1b62a4d0c6f652482b4ac3a0c4234369c09147620aac58e59e0e9de43b56
 ```
 
 ## Setting up a Node server
