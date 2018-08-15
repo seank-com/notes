@@ -16,6 +16,7 @@ _Note:_ Adafruit has an excellent [tutorial](https://learn.adafruit.com/node-emb
 - Select 4 Localisation Options | I2 Change Timezone | US | Pacific Ocean
 - Select 7 Advanced Options | A3 Memory Split | 0
 - Select 5 Interfacing Options | P2 SSH | Yes
+- Selete 5 Interfacing Options | P4 I2C | Yes
 - Select Finish and reboot
 
 ## Configure ssh
@@ -80,7 +81,7 @@ $ sudo nano /etc/rc.local
 add the following line just before the ```exit 0```
 
 ```
-echo -n 1 > /sys/module/i2c_bcm2708/parameters/combined
+echo -n 1 > /sys/module/i2c_bcm2708/parameters/combinedpreview
 ```
 
 ## Setting up Kubernetes
@@ -103,6 +104,7 @@ $ sudo rm /var/swap
 $ sudo curl -sSL https://get.docker.com | sh
 $ sudo usermod -aG docker pi
 $ sudo /etc/init.d/docker start
+$ docker run arm32v7/hello-world
 
 # install kubeadm
 $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
