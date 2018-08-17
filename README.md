@@ -45,21 +45,6 @@ Redux Principles
 [React Hello World](https://facebook.github.io/react/docs/hello-world.html)
 [React Home](https://facebook.github.io/react/)
 
-## Kubernetes
-
-If you install Docker for Mac and enable kubernettes you may need to switch contexts using the following
-
-```bash
-$ kubectl config use_context docker-for-desktop
-```
-
-To view all container running
-
-```bash
-$ kubectl get all --all-namespaces
-```
-
-
 ## Big data
 
 - **MapReduce** is the Google paper that started it all ([Page on googleusercontent.com](http://static.googleusercontent.com/media/research.google.com/en/us/archive/mapreduce-osdi04.pdf)). It's a paradigm for writing distributed code inspired by some elements of functional programming. You don't have to do things this way, but it neatly fits a lot of problems we try to solve in a distributed way. The Google internal implementation is called MapReduce and **Hadoop** is it's open-source implementation. Amazon's Hadoop instance is called Elastic MapReduce (**EMR**) and has plugins for multiple languages.
