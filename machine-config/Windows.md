@@ -6,41 +6,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 1. Install [Chrome](https://www.google.com/chrome/)
 2. Install [Node](http://nodejs.org/)
-3. Install [Atom](https://atom.io)
-  - Goto File | Settings | Install
-    - Enter merge-conflicts and press Packages
-    - Install merge-conflicts package
-    - repeat for find-selection, sort-lines, & markdown-preview-enhanced
-  - Goto Atom | Preferences | Open Config Folder
-    - Click config.cson and edit so it looks generally like this
-    
-      ```coffee
-      "*":
-        core: {}
-        editor:
-          invisibles: {}
-        "exception-reporting":
-          userId: "<don't change what atom has here>"
-        "file-types":
-          cdo: "source.json"
-        jsonlint:
-          hideOnNoErrors: true
-        welcome:
-          showOnStartup: false
-      ```
-    - Click keymap.cson and append the following
-      ```coffee
-      '.editor':
-        'ctrl-alt-up': 'editor:add-selection-above'
-        'ctrl-alt-down': 'editor:add-selection-below'
-
-      'atom-text-editor':
-        'alt-cmd-j': 'find-selection:find-previous-casesensitive'
-        'alt-cmd-k': 'find-selection:find-next-casesensitive'
-      ```
-4. Install [Visual Studio Code](https://code.visualstudio.com/Download)
-5. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-6. Install [Git](https://git-scm.com/)
+3. Install [Visual Studio Code](https://code.visualstudio.com/Download)
+4. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+5. Install [Git](https://git-scm.com/)
 
   - Select Components
 
@@ -64,9 +32,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     *we'll be setting up ssh keys*
 
-7. Launch an elevated command prompt
+6. Launch an elevated command prompt
 
-  Press Win-X and select 'Command Prompt (Admin)'
+  (Press Win-R, type cmd, click OK, right click icon on taskbar, right click 'Command Prompt', right click 'Run as administrator')
 
   ```
   cd %USERPROFILE%
@@ -114,7 +82,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 9. Remove paths from system settings
 
-  From Win-X | System | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
+  From Win-Pause | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
 
   double click PATH under User variables for <username> and remove
 
