@@ -45,13 +45,12 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
   For Init.cmd put the following
 
-  ```
-  @echo off
-  set PATH=%PATH%;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;%~dp0
-  set NODE_PATH=%APPDATA%\npm\node_modules
-  if exist "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat"
-  alias -f "%USERPROFILE%\Bin\cmds.lst"
-  pushd "%USERPROFILE%\Development"
+  ```cmd
+@echo off
+set PATH=%PATH%;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\v-seakel\AppData\Local\Programs\Microsoft VS Code\bin;%~dp0
+if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+alias -f "%USERPROFILE%\Bin\cmds.lst"
+pushd "%USERPROFILE%\Development"
   ```
 
   Copy alias.exe into %USERPROFILE%\Bin if you haven't already.
@@ -109,7 +108,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   ```
   git config --global user.name "Your Name Here"
   git config --global user.email "your_email@example.com"
-  git config --global core.editor "atom --wait"
+  git config --global core.editor "code --wait"
   git config --global color.ui auto
   git config --global push.default simple
   git config --global alias.lga "log --graph --oneline --all --decorate"
@@ -144,7 +143,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   Enter the following command in your dev window
 
   ```
-  atom C:\Windows\System32\drivers\etc\hosts
+  code C:\Windows\System32\drivers\etc\hosts
   ```
   add the following line to the end
   ```
