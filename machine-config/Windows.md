@@ -6,41 +6,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 1. Install [Chrome](https://www.google.com/chrome/)
 2. Install [Node](http://nodejs.org/)
-3. Install [Atom](https://atom.io)
-  - Goto File | Settings | Install
-    - Enter merge-conflicts and press Packages
-    - Install merge-conflicts package
-    - repeat for find-selection, sort-lines, & markdown-preview-enhanced
-  - Goto Atom | Preferences | Open Config Folder
-    - Click config.cson and edit so it looks generally like this
-    
-      ```coffee
-      "*":
-        core: {}
-        editor:
-          invisibles: {}
-        "exception-reporting":
-          userId: "<don't change what atom has here>"
-        "file-types":
-          cdo: "source.json"
-        jsonlint:
-          hideOnNoErrors: true
-        welcome:
-          showOnStartup: false
-      ```
-    - Click keymap.cson and append the following
-      ```coffee
-      '.editor':
-        'ctrl-alt-up': 'editor:add-selection-above'
-        'ctrl-alt-down': 'editor:add-selection-below'
-
-      'atom-text-editor':
-        'alt-cmd-j': 'find-selection:find-previous-casesensitive'
-        'alt-cmd-k': 'find-selection:find-next-casesensitive'
-      ```
-4. Install [Visual Studio Code](https://code.visualstudio.com/Download)
-5. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-6. Install [Git](https://git-scm.com/)
+3. Install [Visual Studio Code](https://code.visualstudio.com/Download)
+4. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+5. Install [Git](https://git-scm.com/)
 
   - Select Components
 
@@ -64,9 +32,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     *we'll be setting up ssh keys*
 
-7. Launch an elevated command prompt
+6. Launch an elevated command prompt
 
-  Press Win-X and select 'Command Prompt (Admin)'
+  (Press Win-R, type cmd, click OK, right click icon on taskbar, right click 'Command Prompt', right click 'Run as administrator')
 
   ```
   cd %USERPROFILE%
@@ -77,13 +45,12 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
   For Init.cmd put the following
 
-  ```
-  @echo off
-  set PATH=%PATH%;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;%~dp0
-  set NODE_PATH=%APPDATA%\npm\node_modules
-  if exist "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\VsDevCmd.bat"
-  alias -f "%USERPROFILE%\Bin\cmds.lst"
-  pushd "%USERPROFILE%\Development"
+  ```cmd
+@echo off
+set PATH=%PATH%;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\v-seakel\AppData\Local\Programs\Microsoft VS Code\bin;%~dp0
+if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+alias -f "%USERPROFILE%\Bin\cmds.lst"
+pushd "%USERPROFILE%\Development"
   ```
 
   Copy alias.exe into %USERPROFILE%\Bin if you haven't already.
@@ -114,7 +81,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 9. Remove paths from system settings
 
-  From Win-X | System | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
+  From Win-Pause | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
 
   double click PATH under User variables for <username> and remove
 
@@ -141,7 +108,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   ```
   git config --global user.name "Your Name Here"
   git config --global user.email "your_email@example.com"
-  git config --global core.editor "atom --wait"
+  git config --global core.editor "code --wait"
   git config --global color.ui auto
   git config --global push.default simple
   git config --global alias.lga "log --graph --oneline --all --decorate"
@@ -176,7 +143,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   Enter the following command in your dev window
 
   ```
-  atom C:\Windows\System32\drivers\etc\hosts
+  code C:\Windows\System32\drivers\etc\hosts
   ```
   add the following line to the end
   ```
