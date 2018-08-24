@@ -1,4 +1,18 @@
- 
+
+
+## Creating the deployment image (for Hummingboard Edge):
+
+Install required tools listed in the [README](https://github.com/ms-iot/project-kayla)
+
+
+
+
+
+
+
+
+
+
 I have notes from Amy on creating an FFU based on the steps [here](https://docs.microsoft.com/en-us/windows-hardware/manufacture/iot/iot-core-manufacturing-guide). The questions that we have are all around managing updates to the application and the OS after the devices are in the field. From reading the links you’ve provided below, this [link](https://docs.microsoft.com/en-us/windows/iot-core/commercialize-your-device/iotcoreservicesoverview) hints that all this is possible through the Azure IoT Device Management but it is not clear how.
 
 [Archana] It is not just Azure device management.  The subscription lets the customer have control over the updates (both App and OS updates) using Device Update Center. 
