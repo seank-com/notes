@@ -4,9 +4,118 @@
 
 Install required tools listed in the [README](https://github.com/ms-iot/project-kayla)
 
+- I downloaded the following from the EEAP program
+    - 17744.1001.180818-1845.rs5_release_amd64fre_ADK.iso
+    - 17744.1001.180818-1845.rs5_release_WindowsSDK.iso
+        - this had to be installed before the WDK I also needed to uncheck "Windows IP over USB" as it would not install (Error 1603)
+    - 17744.1001.180818-1845.rs5_release_amd64fre_WDK.iso
+    - 17744.1001.180818-1845.rs5_release_amd64fre_IOTCORE_PACKAGES.iso
+        - I installed Windows_10_IoT_Core_ARM64_Packages.msi and Windows_10_IoT_Core_ARM_Packages.msi as the instructions said to "install the ARM packages"
+- Follow the steps for environment setup
+
+
+---------------------------
+Microsoft Visual Studio
+---------------------------
+The 'Microsoft.Windows.Tools.WinIDE.Debugger.DebuggerPackage, DebuggerPackage, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null' package did not load correctly.
 
 
 
+The problem may have been caused by a configuration change or by the installation of another extension. You can get more information by examining the file 'C:\Users\v-seakel\AppData\Roaming\Microsoft\VisualStudio\15.0_63a459aa\ActivityLog.xml'.
+
+
+
+Restarting Visual Studio could help resolve this issue.
+
+
+
+Continue to show this error message?
+---------------------------
+Yes   No   
+---------------------------
+
+
+---------------------------
+Microsoft Visual Studio
+---------------------------
+The 'DriverCommonPackage' package did not load correctly.
+
+
+
+The problem may have been caused by a configuration change or by the installation of another extension. You can get more information by examining the file 'C:\Users\v-seakel\AppData\Roaming\Microsoft\VisualStudio\15.0_63a459aa\ActivityLog.xml'.
+
+
+
+Restarting Visual Studio could help resolve this issue.
+
+
+
+Continue to show this error message?
+---------------------------
+Yes   No   
+---------------------------
+
+
+---------------------------
+Microsoft Visual Studio
+---------------------------
+The 'DriverTargetConfigPackage' package did not load correctly.
+
+
+
+The problem may have been caused by a configuration change or by the installation of another extension. You can get more information by examining the file 'C:\Users\v-seakel\AppData\Roaming\Microsoft\VisualStudio\15.0_63a459aa\ActivityLog.xml'.
+
+
+
+Restarting Visual Studio could help resolve this issue.
+
+
+
+Continue to show this error message?
+---------------------------
+Yes   No   
+---------------------------
+
+
+---------------------------
+Microsoft Visual Studio
+---------------------------
+The 'Microsoft.DriverKit.WdkTestPackage.DriverTestPackage, DriverTestPackage, Version=10.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' package did not load correctly.
+
+
+
+The problem may have been caused by a configuration change or by the installation of another extension. You can get more information by examining the file 'C:\Users\v-seakel\AppData\Roaming\Microsoft\VisualStudio\15.0_63a459aa\ActivityLog.xml'.
+
+
+
+Restarting Visual Studio could help resolve this issue.
+
+
+
+Continue to show this error message?
+---------------------------
+Yes   No   
+---------------------------
+
+---------------------------
+Microsoft Visual Studio
+---------------------------
+The 'Microsoft.MetadataAuthoring.DriverKit.MetadataMenuPackage, MetadataAuthoringMenu, Version=0.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' package did not load correctly.
+
+
+
+The problem may have been caused by a configuration change or by the installation of another extension. You can get more information by examining the file 'C:\Users\v-seakel\AppData\Roaming\Microsoft\VisualStudio\15.0_63a459aa\ActivityLog.xml'.
+
+
+
+Restarting Visual Studio could help resolve this issue.
+
+
+
+Continue to show this error message?
+---------------------------
+Yes   No   
+---------------------------
 
 
 
