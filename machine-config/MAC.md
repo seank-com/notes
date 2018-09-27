@@ -15,28 +15,11 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew install brew-cask-completion
   $ brew install youtube-dl
   $ brew cask install iterm2
-  $ brew cask install atom
   $ touch .bash_profile
   $ touch .bashrc
   $ mkdir ~/Development
   $ atom .bash_profile .bashrc & exit
   ```
-4. In ```atom```
-  - Goto Atom | Preferences | Install
-    - Enter merge-conflicts and press Packages
-    - Install merge-conflicts package
-    - repeat for find-selection, sort-lines, remote-atom & markdown-preview-enhanced
-  - Goto Atom | Preferences | Open Config Folder
-    - Click keymap.cson and append the following    
-      ```coffee
-      '.editor':
-        'ctrl-alt-up': 'editor:add-selection-above'
-        'ctrl-alt-down': 'editor:add-selection-below'
-
-      'atom-text-editor':
-        'alt-cmd-j': 'find-selection:find-previous-casesensitive'
-        'alt-cmd-k': 'find-selection:find-next-casesensitive'
-      ```
 
 4. Edit .bash_profile (see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html) for details)
   ```bash
@@ -164,10 +147,16 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # The browser
   $ brew cask install google-chrome
 
-
-
   # Other useful tools
-  $ brew install jq             
+  $ brew install jq     
+  $ brew install bash-completion			
+  $ brew install brew-cask-completion		
+  $ brew install mkvtoolnix
+  $ brew install node
+  $ brew install git				
+  $ brew install kubernetes-helm			
+  $ brew install youtube-dl
+
   $ brew cask install android-file-transfer
   $ brew cask install dropbox
   $ brew cask install tresorit
@@ -186,7 +175,16 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install sshfs
   $ brew cask install qbittorrent
   $ brew cask install caskroom/drivers/drobo-dashboard
-
+  $ brew cask install blender
+  $ brew cask install calibre
+  $ brew cask install obs
+  $ brew cask install etcher
+  $ brew cask install gimp
+  $ brew cask instal handbrake
+  $ brew cask install imageoptim
+  $ brew cask install keybase
+  $ brew cask install wireshark
+  
   # Business Tools
   $ brew cask install microsoft-office
   $ brew cask install skype-for-business
@@ -194,6 +192,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
   # Development Tools
   $ brew cask install visual-studio-code
+  $ brew cask install microsoft-azure-storage-explorer
   #$ brew cask install unity
   #$ brew cask install visual-studio
   #$ brew cask install intel-haxm
