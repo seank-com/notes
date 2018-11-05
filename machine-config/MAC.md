@@ -222,6 +222,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
+  $ git config --global alias.sync "pull --rebase --autostash"
 
   # if you installed atom
   $ git config --global core.editor "atom --wait"
