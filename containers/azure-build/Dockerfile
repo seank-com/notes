@@ -1,4 +1,6 @@
-FROM ubuntu:xenial
+FROM ubuntu:xenial AS base
+
+FROM base AS tools
 
 RUN \
   apt-get update && \
@@ -17,4 +19,6 @@ RUN \
 
 WORKDIR /src
 
-CMD ["bash"]
+FROM tools AS sdk
+
+RUN git clone -b lts_10_2018 --recursive https://github.com/Azure/azure-iot-sdk-c.git
