@@ -21,6 +21,8 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   - Select "Use Git and optional Unix tools from the Windows Command Prompt"
 
     *We will remove the paths later (if you were worried)*
+  
+  - Select "Use the OpenSSL library"
 
   - Select "Checkout Windows-style, commit Unix-style line endings"
 
