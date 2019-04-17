@@ -1,3 +1,5 @@
+## Keeping the boot partition clean
+
 To clean up the boot partition you need to delete old images. First you need to figure out what image you are booting.
 
 ```bash
@@ -38,3 +40,8 @@ $ sudo dpkg --purge linux-image-extra-4.4.0-109-generic
 ...
 $ sudo rm ~seank/boot.tar
 ```
+
+## Building your own package and repository
+
+- [Build your own package](http://packaging.ubuntu.com/html/packaging-new-software.html)
+- [Create your own repository](https://medium.com/sqooba/create-your-own-custom-and-authenticated-apt-repository-1e4a4cf0b864)
