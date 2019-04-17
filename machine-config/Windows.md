@@ -21,6 +21,8 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   - Select "Use Git and optional Unix tools from the Windows Command Prompt"
 
     *We will remove the paths later (if you were worried)*
+  
+  - Select "Use the OpenSSL library"
 
   - Select "Checkout Windows-style, commit Unix-style line endings"
 
@@ -34,7 +36,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 6. Launch an elevated command prompt
 
-  (Press Win-R, type cmd, click OK, right click icon on taskbar, right click 'Command Prompt', right click 'Run as administrator')
+  (Press <kbd>Win</kbd>+<kbd>R</kbd>, type `cmd`, click OK, right click icon on taskbar, right click 'Command Prompt', right click 'Run as administrator')
 
   ```
   cd %USERPROFILE%
@@ -48,7 +50,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   ```cmd
 @echo off
 set PATH=%PATH%;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\v-seakel\AppData\Local\Programs\Microsoft VS Code\bin;%~dp0
-if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat" -arch=amd64 -host_arch=amd64
 alias -f "%USERPROFILE%\Bin\cmds.lst"
 pushd "%USERPROFILE%\Development"
   ```
@@ -81,14 +83,12 @@ pushd "%USERPROFILE%\Development"
 
 9. Remove paths from system settings
 
-  From Win-Pause | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
+  Press <kbd>Win</kbd>+<kbd>Pause</kbd> | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
 
   double click PATH under User variables for <username> and remove
 
   ```
   C:\Users\<username>\AppData\Roaming\npm;
-  C:\Users\<username>\AppData\Local\atom\bin;
-  C:\Program Files (x86)\Microsoft VS Code\bin;
   ```
 
   double click PATH under System variables and remove
@@ -98,7 +98,6 @@ pushd "%USERPROFILE%\Development"
   C:\Program Files\Git\cmd;
   C:\Program Files\Git\mingw64\bin;
   C:\Program Files\Git\usr\bin;
-  C:\HashiCorp\Vagrant\bin;
   ```
 
 10. Launch the dev window from the shortcut
@@ -108,17 +107,14 @@ pushd "%USERPROFILE%\Development"
   ```
   git config --global user.name "Your Name Here"
   git config --global user.email "your_email@example.com"
-  git config --global core.editor "code --wait"
   git config --global color.ui auto
   git config --global push.default simple
   git config --global alias.lga "log --graph --oneline --all --decorate"
-  git config --global core.autocrlf true
-  git config --global core.safecrlf true
   ```  
 
 11. Launch Git bash
 
-  Press the Win key and type 'git' right click Git Bash and select pin to taskbar then click the button on the taskbar
+  Press the <kbd>Win</kbd> key and type `git` right click Git Bash and select pin to taskbar then click the button on the taskbar
 
   Setup ssh keys for github with the following commands
 
