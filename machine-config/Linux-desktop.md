@@ -11,15 +11,15 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
 1. Open a terminal console (press ```super``` key and type ```term```) then run the following:
 
   ```bash
-  $ sudo apt-get update
-  $ sudo apt-get upgrade
-  $ sudo apt-get dist-upgrade
+  $ sudo apt update
+  $ sudo apt upgrade
+  $ sudo apt dist-upgrade
 
   # If Ubuntu is running in a VirtualBox VM
   # Insert guess extensions here, intsall and restart
 
   # install git
-  $ sudo apt-get install git-gui
+  $ sudo apt install git
 
   # install Docker
   $ sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
@@ -30,39 +30,20 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ sudo apt-get install docker-ce
   $ sudo docker run hello-world
 
-  # install Atom
-  $ sudo add-apt-repository ppa:webupd8team/atom
-  $ sudo apt-get update
-  $ sudo apt-get install atom
-
-  # install Bro Pages (pay attention to any warning about updating your path)
-  $ sudo apt-get install ruby-dev
-  $ gem install --user-install bropages
-
+  # install VS Code
+  $ sudo apt install software-properties-common apt-transport-https wget
+  $ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+  $ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  $ sudo apt update
+  $ sudo apt install code
+  
   $ sudo apt autoremove
 
   $ mkdir ~/Development
   $ atom .bashrc & exit
   ```
 
-2. In ```atom```
-  - Goto Edit | Preferences | Install
-    - Enter merge-conflicts and press Packages
-    - Install merge-conflicts package
-    - repeat for find-selection, sort-lines & atom-mermaid
-  - Goto Edit | Preferences | Keybindings | your keymap file
-    - Append the following    
-      ```coffee
-      '.editor':
-        'ctrl-alt-up': 'editor:add-selection-above'
-        'ctrl-alt-down': 'editor:add-selection-below'
-
-      'atom-text-editor':
-        'alt-cmd-j': 'find-selection:find-previous-casesensitive'
-        'alt-cmd-k': 'find-selection:find-next-casesensitive'
-      ```
-
-3. Edit .bashrc to be something like the following
+2. Edit .bashrc to be something like the following
 
   ```bash
 
