@@ -18,31 +18,27 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ sudo apt dist-upgrade
 
   # If Ubuntu is running in a VirtualBox VM
-  # Insert guess extensions here, intsall and restart
+  # Insert guess extensions here, install and restart
 
   # install git
   $ sudo apt install git
 
   # install Docker
-  $ sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+  $ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
   $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   $ sudo apt-key fingerprint 0EBFCD88
   $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
   $ sudo apt-get update
-  $ sudo apt-get install docker-ce
+  $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+  $ sudo usermod -aG docker seank
   $ sudo docker run hello-world
 
   # install VS Code
-  $ sudo apt install software-properties-common apt-transport-https wget
-  $ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-  $ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-  $ sudo apt update
-  $ sudo apt install code
-  
+  $ sudo snap install --classic code
   $ sudo apt autoremove
 
   $ mkdir ~/Development
-  $ atom .bashrc & exit
+  $ code .bashrc & exit
   ```
 
 2. Edit .bashrc to be something like the following
@@ -169,7 +165,7 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
 
   # if you installed atom
-  $ git config --global core.editor "atom --wait"
+  $ git config --global core.editor "code --wait"
 
   # If you want to unset any git config commands above
   # you can use the following command
