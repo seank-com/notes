@@ -4,6 +4,8 @@ Configuration steps, scripts and tools i use on linux machines. Feel free to ski
 
 I assume you are setting up a physical machine by booting a DVD with the [Ubuntu Server 64 bit ISO](http://www.ubuntu.com/download/server). If you are setting up a virtual machine either locally or in the cloud, see [Cloud configuration](Cloud.md)
 
+**NOTE:** *Nvidia drivers can cause you to get into a login loop. If this happens this [thread](https://askubuntu.com/questions/162075/my-computer-boots-to-a-black-screen-what-options-do-i-have-to-fix-it) might be helpful
+
 ## Basic Install
 
 ### Setting up your development environment
