@@ -36,6 +36,10 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   # install VS Code
   $ sudo snap install --classic code
   $ sudo apt autoremove
+  
+  # install Bro pages
+  $ sudo snap install ruby --classic
+  $ gem install bropages
 
   $ mkdir ~/Development
   $ code .bashrc & exit
