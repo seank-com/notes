@@ -1,0 +1,664 @@
+{
+    "version": 2,
+    "targets": {
+      ".NETFramework,Version=v4.6": {
+        "Microsoft.AspNet.WebApi.Client/5.2.3": {
+          "type": "package",
+          "dependencies": {
+            "Newtonsoft.Json": "6.0.4"
+          },
+          "frameworkAssemblies": [
+            "System.Net.Http"
+          ],
+          "compile": {
+            "lib/net45/System.Net.Http.Formatting.dll": {}
+          },
+          "runtime": {
+            "lib/net45/System.Net.Http.Formatting.dll": {}
+          }
+        },
+        "Microsoft.Azure.Amqp/2.2.0": {
+          "type": "package",
+          "dependencies": {
+            "System.Net.WebSockets.Client": "4.0.0",
+            "System.Runtime.Serialization.Primitives": "4.1.1"
+          },
+          "compile": {
+            "lib/net45/Microsoft.Azure.Amqp.dll": {}
+          },
+          "runtime": {
+            "lib/net45/Microsoft.Azure.Amqp.dll": {}
+          }
+        },
+        "Microsoft.Azure.Devices/1.16.0": {
+          "type": "package",
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": "5.2.3",
+            "Microsoft.Azure.Amqp": "2.2.0",
+            "Microsoft.Azure.Devices.Shared": "1.15.0",
+            "Microsoft.Owin": "4.0.0",
+            "Newtonsoft.Json": "10.0.3"
+          },
+          "frameworkAssemblies": [
+            "System.Configuration",
+            "System.Transactions",
+            "System.Web"
+          ],
+          "compile": {
+            "lib/net451/Microsoft.Azure.Devices.dll": {}
+          },
+          "runtime": {
+            "lib/net451/Microsoft.Azure.Devices.dll": {}
+          }
+        },
+        "Microsoft.Azure.Devices.Shared/1.15.0": {
+          "type": "package",
+          "dependencies": {
+            "Newtonsoft.Json": "10.0.3"
+          },
+          "frameworkAssemblies": [
+            "Microsoft.CSharp"
+          ],
+          "compile": {
+            "lib/net451/Microsoft.Azure.Devices.Shared.dll": {}
+          },
+          "runtime": {
+            "lib/net451/Microsoft.Azure.Devices.Shared.dll": {}
+          }
+        },
+        "Microsoft.Owin/4.0.0": {
+          "type": "package",
+          "dependencies": {
+            "Owin": "1.0.0"
+          },
+          "compile": {
+            "lib/net451/Microsoft.Owin.dll": {}
+          },
+          "runtime": {
+            "lib/net451/Microsoft.Owin.dll": {}
+          }
+        },
+        "Newtonsoft.Json/10.0.3": {
+          "type": "package",
+          "compile": {
+            "lib/net45/Newtonsoft.Json.dll": {}
+          },
+          "runtime": {
+            "lib/net45/Newtonsoft.Json.dll": {}
+          }
+        },
+        "Owin/1.0.0": {
+          "type": "package",
+          "compile": {
+            "lib/net40/Owin.dll": {}
+          },
+          "runtime": {
+            "lib/net40/Owin.dll": {}
+          }
+        },
+        "System.Net.WebSockets/4.0.0": {
+          "type": "package",
+          "frameworkAssemblies": [
+            "System",
+            "mscorlib"
+          ],
+          "compile": {
+            "ref/net46/System.Net.WebSockets.dll": {}
+          },
+          "runtime": {
+            "lib/net46/System.Net.WebSockets.dll": {}
+          }
+        },
+        "System.Net.WebSockets.Client/4.0.0": {
+          "type": "package",
+          "dependencies": {
+            "System.Net.WebSockets": "4.0.0",
+            "System.Security.Cryptography.X509Certificates": "4.1.0"
+          },
+          "frameworkAssemblies": [
+            "System",
+            "mscorlib"
+          ],
+          "compile": {
+            "ref/net46/System.Net.WebSockets.Client.dll": {}
+          },
+          "runtime": {
+            "lib/net46/System.Net.WebSockets.Client.dll": {}
+          },
+          "runtimeTargets": {
+            "runtimes/unix/lib/netstandard1.3/System.Net.WebSockets.Client.dll": {
+              "assetType": "runtime",
+              "rid": "unix"
+            },
+            "runtimes/win/lib/net46/System.Net.WebSockets.Client.dll": {
+              "assetType": "runtime",
+              "rid": "win"
+            }
+          }
+        },
+        "System.Runtime.Serialization.Primitives/4.1.1": {
+          "type": "package",
+          "frameworkAssemblies": [
+            "System.Runtime.Serialization",
+            "mscorlib"
+          ],
+          "compile": {
+            "ref/net46/System.Runtime.Serialization.Primitives.dll": {}
+          },
+          "runtime": {
+            "lib/net46/System.Runtime.Serialization.Primitives.dll": {}
+          }
+        },
+        "System.Security.Cryptography.Algorithms/4.2.0": {
+          "type": "package",
+          "dependencies": {
+            "System.Security.Cryptography.Primitives": "4.0.0"
+          },
+          "frameworkAssemblies": [
+            "System.Core",
+            "mscorlib"
+          ],
+          "compile": {
+            "ref/net46/System.Security.Cryptography.Algorithms.dll": {}
+          },
+          "runtime": {
+            "lib/net46/System.Security.Cryptography.Algorithms.dll": {}
+          },
+          "runtimeTargets": {
+            "runtimes/win/lib/net46/System.Security.Cryptography.Algorithms.dll": {
+              "assetType": "runtime",
+              "rid": "win"
+            }
+          }
+        },
+        "System.Security.Cryptography.Encoding/4.0.0": {
+          "type": "package",
+          "frameworkAssemblies": [
+            "System",
+            "mscorlib"
+          ],
+          "compile": {
+            "ref/net46/System.Security.Cryptography.Encoding.dll": {}
+          },
+          "runtime": {
+            "lib/net46/System.Security.Cryptography.Encoding.dll": {}
+          },
+          "runtimeTargets": {
+            "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
+              "assetType": "runtime",
+              "rid": "unix"
+            },
+            "runtimes/win/lib/net46/System.Security.Cryptography.Encoding.dll": {
+              "assetType": "runtime",
+              "rid": "win"
+            }
+          }
+        },
+        "System.Security.Cryptography.Primitives/4.0.0": {
+          "type": "package",
+          "frameworkAssemblies": [
+            "mscorlib"
+          ],
+          "compile": {
+            "ref/net46/System.Security.Cryptography.Primitives.dll": {}
+          },
+          "runtime": {
+            "lib/net46/System.Security.Cryptography.Primitives.dll": {}
+          }
+        },
+        "System.Security.Cryptography.X509Certificates/4.1.0": {
+          "type": "package",
+          "dependencies": {
+            "System.Security.Cryptography.Algorithms": "4.2.0",
+            "System.Security.Cryptography.Encoding": "4.0.0"
+          },
+          "frameworkAssemblies": [
+            "System",
+            "System.Core",
+            "mscorlib"
+          ],
+          "compile": {
+            "ref/net46/System.Security.Cryptography.X509Certificates.dll": {}
+          },
+          "runtime": {
+            "lib/net46/System.Security.Cryptography.X509Certificates.dll": {}
+          },
+          "runtimeTargets": {
+            "runtimes/win/lib/net46/System.Security.Cryptography.X509Certificates.dll": {
+              "assetType": "runtime",
+              "rid": "win"
+            }
+          }
+        }
+      }
+    },
+    "libraries": {
+      "Microsoft.AspNet.WebApi.Client/5.2.3": {
+        "sha512": "3kiI8peSXbXHDDrRuo+QaX0iCEVRe0nvn2dBDRw656uPX32UalbBlSIDUDlJxu05eau4tnuhsikiUuugvvoUoQ==",
+        "type": "package",
+        "path": "microsoft.aspnet.webapi.client/5.2.3",
+        "files": [
+          "lib/net45/System.Net.Http.Formatting.dll",
+          "lib/net45/System.Net.Http.Formatting.xml",
+          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
+          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
+          "microsoft.aspnet.webapi.client.5.2.3.nupkg.sha512",
+          "microsoft.aspnet.webapi.client.nuspec"
+        ]
+      },
+      "Microsoft.Azure.Amqp/2.2.0": {
+        "sha512": "7Tc+XfSAzVgE394qLeoDFBG9V5Pa1cFLQUtY1IC7oAsJKVrKC00/idmEpM0zDba83jhVBC7IjHbmuTTWg4DcxQ==",
+        "type": "package",
+        "path": "microsoft.azure.amqp/2.2.0",
+        "files": [
+          "lib/monoandroid/Microsoft.Azure.Amqp.dll",
+          "lib/net45/Microsoft.Azure.Amqp.dll",
+          "lib/net45/Microsoft.Azure.Amqp.xml",
+          "lib/netstandard1.3/Microsoft.Azure.Amqp.dll",
+          "lib/netstandard1.3/Microsoft.Azure.Amqp.xml",
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Microsoft.Azure.Amqp.dll",
+          "lib/uap10.0/Microsoft.Azure.Amqp.dll",
+          "lib/uap10.0/Microsoft.Azure.Amqp.pri",
+          "microsoft.azure.amqp.2.2.0.nupkg.sha512",
+          "microsoft.azure.amqp.nuspec"
+        ]
+      },
+      "Microsoft.Azure.Devices/1.16.0": {
+        "sha512": "QKW0iXDjngG2/1mOacklubHKZuVw6gTk/hxEefAcYFkYzF6cPcRhJ7x5gJUs9G9ot06JvCdIsw1H5Ym1bwgr+A==",
+        "type": "package",
+        "path": "microsoft.azure.devices/1.16.0",
+        "files": [
+          ".signature.p7s",
+          "lib/net451/Microsoft.Azure.Devices.dll",
+          "lib/net451/Microsoft.Azure.Devices.xml",
+          "lib/netstandard1.3/Microsoft.Azure.Devices.dll",
+          "lib/netstandard1.3/Microsoft.Azure.Devices.xml",
+          "lib/netstandard2.0/Microsoft.Azure.Devices.dll",
+          "lib/netstandard2.0/Microsoft.Azure.Devices.xml",
+          "microsoft.azure.devices.1.16.0.nupkg.sha512",
+          "microsoft.azure.devices.nuspec"
+        ]
+      },
+      "Microsoft.Azure.Devices.Shared/1.15.0": {
+        "sha512": "pEWEi+b369+vYHiuFSPOFDaj9GOMzGqhNYPeLhJbPQ+q+BjJO3nDBA+OG4Wf18LZlWb8c/cEbKYCiZBWUc6I5g==",
+        "type": "package",
+        "path": "microsoft.azure.devices.shared/1.15.0",
+        "files": [
+          ".signature.p7s",
+          "lib/net451/Microsoft.Azure.Devices.Shared.dll",
+          "lib/net451/Microsoft.Azure.Devices.Shared.xml",
+          "lib/netstandard1.3/Microsoft.Azure.Devices.Shared.dll",
+          "lib/netstandard1.3/Microsoft.Azure.Devices.Shared.xml",
+          "lib/netstandard2.0/Microsoft.Azure.Devices.Shared.dll",
+          "lib/netstandard2.0/Microsoft.Azure.Devices.Shared.xml",
+          "microsoft.azure.devices.shared.1.15.0.nupkg.sha512",
+          "microsoft.azure.devices.shared.nuspec"
+        ]
+      },
+      "Microsoft.Owin/4.0.0": {
+        "sha512": "3TNVMkgF+yhesPYwq67ZOcLGtfKEupNNXcqVO4FRNjkQ1v0gBNb3k8CSuJonrCC8EAUp+OeUYrDTQePiyaVzpw==",
+        "type": "package",
+        "path": "microsoft.owin/4.0.0",
+        "files": [
+          "lib/net451/Microsoft.Owin.XML",
+          "lib/net451/Microsoft.Owin.dll",
+          "microsoft.owin.4.0.0.nupkg.sha512",
+          "microsoft.owin.nuspec"
+        ]
+      },
+      "Newtonsoft.Json/10.0.3": {
+        "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+        "type": "package",
+        "path": "newtonsoft.json/10.0.3",
+        "files": [
+          "LICENSE.md",
+          "lib/net20/Newtonsoft.Json.dll",
+          "lib/net20/Newtonsoft.Json.xml",
+          "lib/net35/Newtonsoft.Json.dll",
+          "lib/net35/Newtonsoft.Json.xml",
+          "lib/net40/Newtonsoft.Json.dll",
+          "lib/net40/Newtonsoft.Json.xml",
+          "lib/net45/Newtonsoft.Json.dll",
+          "lib/net45/Newtonsoft.Json.xml",
+          "lib/netstandard1.0/Newtonsoft.Json.dll",
+          "lib/netstandard1.0/Newtonsoft.Json.xml",
+          "lib/netstandard1.3/Newtonsoft.Json.dll",
+          "lib/netstandard1.3/Newtonsoft.Json.xml",
+          "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+          "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+          "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+          "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+          "newtonsoft.json.10.0.3.nupkg.sha512",
+          "newtonsoft.json.nuspec",
+          "tools/install.ps1"
+        ]
+      },
+      "Owin/1.0.0": {
+        "sha512": "OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
+        "type": "package",
+        "path": "owin/1.0.0",
+        "files": [
+          "lib/net40/Owin.dll",
+          "owin.1.0.0.nupkg.sha512",
+          "owin.nuspec"
+        ]
+      },
+      "System.Net.WebSockets/4.0.0": {
+        "sha512": "2KJo8hir6Edi9jnMDAMhiJoI691xRBmKcbNpwjrvpIMOCTYOtBpSsSEGBxBDV7PKbasJNaFp1+PZz1D7xS41Hg==",
+        "type": "package",
+        "path": "system.net.websockets/4.0.0",
+        "files": [
+          "ThirdPartyNotices.txt",
+          "dotnet_library_license.txt",
+          "lib/MonoAndroid10/_._",
+          "lib/MonoTouch10/_._",
+          "lib/net46/System.Net.WebSockets.dll",
+          "lib/netstandard1.3/System.Net.WebSockets.dll",
+          "lib/xamarinios10/_._",
+          "lib/xamarinmac20/_._",
+          "lib/xamarintvos10/_._",
+          "lib/xamarinwatchos10/_._",
+          "ref/MonoAndroid10/_._",
+          "ref/MonoTouch10/_._",
+          "ref/net46/System.Net.WebSockets.dll",
+          "ref/netstandard1.3/System.Net.WebSockets.dll",
+          "ref/netstandard1.3/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/de/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/es/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/fr/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/it/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/ja/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/ko/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/ru/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/zh-hans/System.Net.WebSockets.xml",
+          "ref/netstandard1.3/zh-hant/System.Net.WebSockets.xml",
+          "ref/xamarinios10/_._",
+          "ref/xamarinmac20/_._",
+          "ref/xamarintvos10/_._",
+          "ref/xamarinwatchos10/_._",
+          "system.net.websockets.4.0.0.nupkg.sha512",
+          "system.net.websockets.nuspec"
+        ]
+      },
+      "System.Net.WebSockets.Client/4.0.0": {
+        "sha512": "GY5h9cn0ZVsG4ORQqMytTldrqxet2RC2CSEsgWGf4XNW5jhL5SxzcUZph03xbZsgn7K3qMr+Rq+gkbJNI+FEXg==",
+        "type": "package",
+        "path": "system.net.websockets.client/4.0.0",
+        "files": [
+          "ThirdPartyNotices.txt",
+          "dotnet_library_license.txt",
+          "lib/MonoAndroid10/_._",
+          "lib/MonoTouch10/_._",
+          "lib/net46/System.Net.WebSockets.Client.dll",
+          "lib/xamarinios10/_._",
+          "lib/xamarinmac20/_._",
+          "lib/xamarintvos10/_._",
+          "lib/xamarinwatchos10/_._",
+          "ref/MonoAndroid10/_._",
+          "ref/MonoTouch10/_._",
+          "ref/net46/System.Net.WebSockets.Client.dll",
+          "ref/netstandard1.3/System.Net.WebSockets.Client.dll",
+          "ref/netstandard1.3/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/de/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/es/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/fr/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/it/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/ja/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/ko/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/ru/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/zh-hans/System.Net.WebSockets.Client.xml",
+          "ref/netstandard1.3/zh-hant/System.Net.WebSockets.Client.xml",
+          "ref/xamarinios10/_._",
+          "ref/xamarinmac20/_._",
+          "ref/xamarintvos10/_._",
+          "ref/xamarinwatchos10/_._",
+          "runtimes/unix/lib/netstandard1.3/System.Net.WebSockets.Client.dll",
+          "runtimes/win/lib/net46/System.Net.WebSockets.Client.dll",
+          "runtimes/win/lib/netcore50/System.Net.WebSockets.Client.dll",
+          "runtimes/win/lib/netstandard1.3/System.Net.WebSockets.Client.dll",
+          "system.net.websockets.client.4.0.0.nupkg.sha512",
+          "system.net.websockets.client.nuspec"
+        ]
+      },
+      "System.Runtime.Serialization.Primitives/4.1.1": {
+        "sha512": "HZ6Du5QrTG8MNJbf4e4qMO3JRAkIboGT5Fk804uZtg3Gq516S7hAqTm2UZKUHa7/6HUGdVy3AqMQKbns06G/cg==",
+        "type": "package",
+        "path": "system.runtime.serialization.primitives/4.1.1",
+        "files": [
+          "ThirdPartyNotices.txt",
+          "dotnet_library_license.txt",
+          "lib/MonoAndroid10/_._",
+          "lib/MonoTouch10/_._",
+          "lib/net45/_._",
+          "lib/net46/System.Runtime.Serialization.Primitives.dll",
+          "lib/netcore50/System.Runtime.Serialization.Primitives.dll",
+          "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll",
+          "lib/portable-net45+win8+wp8+wpa81/_._",
+          "lib/win8/_._",
+          "lib/wp80/_._",
+          "lib/wpa81/_._",
+          "lib/xamarinios10/_._",
+          "lib/xamarinmac20/_._",
+          "lib/xamarintvos10/_._",
+          "lib/xamarinwatchos10/_._",
+          "ref/MonoAndroid10/_._",
+          "ref/MonoTouch10/_._",
+          "ref/net45/_._",
+          "ref/net46/System.Runtime.Serialization.Primitives.dll",
+          "ref/netcore50/System.Runtime.Serialization.Primitives.dll",
+          "ref/netcore50/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/de/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/es/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/fr/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/it/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/ja/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/ko/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/ru/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/zh-hans/System.Runtime.Serialization.Primitives.xml",
+          "ref/netcore50/zh-hant/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/System.Runtime.Serialization.Primitives.dll",
+          "ref/netstandard1.0/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/de/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/es/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/fr/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/it/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/ja/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/ko/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/ru/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/zh-hans/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.0/zh-hant/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/System.Runtime.Serialization.Primitives.dll",
+          "ref/netstandard1.3/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/de/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/es/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/fr/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/it/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/ja/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/ko/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/ru/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/zh-hans/System.Runtime.Serialization.Primitives.xml",
+          "ref/netstandard1.3/zh-hant/System.Runtime.Serialization.Primitives.xml",
+          "ref/portable-net45+win8+wp8+wpa81/_._",
+          "ref/win8/_._",
+          "ref/wp80/_._",
+          "ref/wpa81/_._",
+          "ref/xamarinios10/_._",
+          "ref/xamarinmac20/_._",
+          "ref/xamarintvos10/_._",
+          "ref/xamarinwatchos10/_._",
+          "runtimes/aot/lib/netcore50/System.Runtime.Serialization.Primitives.dll",
+          "system.runtime.serialization.primitives.4.1.1.nupkg.sha512",
+          "system.runtime.serialization.primitives.nuspec"
+        ]
+      },
+      "System.Security.Cryptography.Algorithms/4.2.0": {
+        "sha512": "8JQFxbLVdrtIOKMDN38Fn0GWnqYZw/oMlwOUG/qz1jqChvyZlnUmu+0s7wLx7JYua/nAXoESpHA3iw11QFWhXg==",
+        "type": "package",
+        "path": "system.security.cryptography.algorithms/4.2.0",
+        "files": [
+          "ThirdPartyNotices.txt",
+          "dotnet_library_license.txt",
+          "lib/MonoAndroid10/_._",
+          "lib/MonoTouch10/_._",
+          "lib/net46/System.Security.Cryptography.Algorithms.dll",
+          "lib/net461/System.Security.Cryptography.Algorithms.dll",
+          "lib/net463/System.Security.Cryptography.Algorithms.dll",
+          "lib/xamarinios10/_._",
+          "lib/xamarinmac20/_._",
+          "lib/xamarintvos10/_._",
+          "lib/xamarinwatchos10/_._",
+          "ref/MonoAndroid10/_._",
+          "ref/MonoTouch10/_._",
+          "ref/net46/System.Security.Cryptography.Algorithms.dll",
+          "ref/net461/System.Security.Cryptography.Algorithms.dll",
+          "ref/net463/System.Security.Cryptography.Algorithms.dll",
+          "ref/netstandard1.3/System.Security.Cryptography.Algorithms.dll",
+          "ref/netstandard1.4/System.Security.Cryptography.Algorithms.dll",
+          "ref/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+          "ref/xamarinios10/_._",
+          "ref/xamarinmac20/_._",
+          "ref/xamarintvos10/_._",
+          "ref/xamarinwatchos10/_._",
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+          "runtimes/win/lib/net46/System.Security.Cryptography.Algorithms.dll",
+          "runtimes/win/lib/net461/System.Security.Cryptography.Algorithms.dll",
+          "runtimes/win/lib/net463/System.Security.Cryptography.Algorithms.dll",
+          "runtimes/win/lib/netcore50/System.Security.Cryptography.Algorithms.dll",
+          "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+          "system.security.cryptography.algorithms.4.2.0.nupkg.sha512",
+          "system.security.cryptography.algorithms.nuspec"
+        ]
+      },
+      "System.Security.Cryptography.Encoding/4.0.0": {
+        "sha512": "FbKgE5MbxSQMPcSVRgwM6bXN3GtyAh04NkV8E5zKCBE26X0vYW0UtTa2FIgkH33WVqBVxRgxljlVYumWtU+HcQ==",
+        "type": "package",
+        "path": "system.security.cryptography.encoding/4.0.0",
+        "files": [
+          "ThirdPartyNotices.txt",
+          "dotnet_library_license.txt",
+          "lib/MonoAndroid10/_._",
+          "lib/MonoTouch10/_._",
+          "lib/net46/System.Security.Cryptography.Encoding.dll",
+          "lib/xamarinios10/_._",
+          "lib/xamarinmac20/_._",
+          "lib/xamarintvos10/_._",
+          "lib/xamarinwatchos10/_._",
+          "ref/MonoAndroid10/_._",
+          "ref/MonoTouch10/_._",
+          "ref/net46/System.Security.Cryptography.Encoding.dll",
+          "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+          "ref/netstandard1.3/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/de/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/es/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/fr/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/it/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/ja/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/ko/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/ru/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/zh-hans/System.Security.Cryptography.Encoding.xml",
+          "ref/netstandard1.3/zh-hant/System.Security.Cryptography.Encoding.xml",
+          "ref/xamarinios10/_._",
+          "ref/xamarinmac20/_._",
+          "ref/xamarintvos10/_._",
+          "ref/xamarinwatchos10/_._",
+          "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+          "runtimes/win/lib/net46/System.Security.Cryptography.Encoding.dll",
+          "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+          "system.security.cryptography.encoding.4.0.0.nupkg.sha512",
+          "system.security.cryptography.encoding.nuspec"
+        ]
+      },
+      "System.Security.Cryptography.Primitives/4.0.0": {
+        "sha512": "Wkd7QryWYjkQclX0bngpntW5HSlMzeJU24UaLJQ7YTfI8ydAVAaU2J+HXLLABOVJlKTVvAeL0Aj39VeTe7L+oA==",
+        "type": "package",
+        "path": "system.security.cryptography.primitives/4.0.0",
+        "files": [
+          "ThirdPartyNotices.txt",
+          "dotnet_library_license.txt",
+          "lib/MonoAndroid10/_._",
+          "lib/MonoTouch10/_._",
+          "lib/net46/System.Security.Cryptography.Primitives.dll",
+          "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll",
+          "lib/xamarinios10/_._",
+          "lib/xamarinmac20/_._",
+          "lib/xamarintvos10/_._",
+          "lib/xamarinwatchos10/_._",
+          "ref/MonoAndroid10/_._",
+          "ref/MonoTouch10/_._",
+          "ref/net46/System.Security.Cryptography.Primitives.dll",
+          "ref/netstandard1.3/System.Security.Cryptography.Primitives.dll",
+          "ref/xamarinios10/_._",
+          "ref/xamarinmac20/_._",
+          "ref/xamarintvos10/_._",
+          "ref/xamarinwatchos10/_._",
+          "system.security.cryptography.primitives.4.0.0.nupkg.sha512",
+          "system.security.cryptography.primitives.nuspec"
+        ]
+      },
+      "System.Security.Cryptography.X509Certificates/4.1.0": {
+        "sha512": "4HEfsQIKAhA1+ApNn729Gi09zh+lYWwyIuViihoMDWp1vQnEkL2ct7mAbhBlLYm+x/L4Rr/pyGge1lIY635e0w==",
+        "type": "package",
+        "path": "system.security.cryptography.x509certificates/4.1.0",
+        "files": [
+          "ThirdPartyNotices.txt",
+          "dotnet_library_license.txt",
+          "lib/MonoAndroid10/_._",
+          "lib/MonoTouch10/_._",
+          "lib/net46/System.Security.Cryptography.X509Certificates.dll",
+          "lib/net461/System.Security.Cryptography.X509Certificates.dll",
+          "lib/xamarinios10/_._",
+          "lib/xamarinmac20/_._",
+          "lib/xamarintvos10/_._",
+          "lib/xamarinwatchos10/_._",
+          "ref/MonoAndroid10/_._",
+          "ref/MonoTouch10/_._",
+          "ref/net46/System.Security.Cryptography.X509Certificates.dll",
+          "ref/net461/System.Security.Cryptography.X509Certificates.dll",
+          "ref/netstandard1.3/System.Security.Cryptography.X509Certificates.dll",
+          "ref/netstandard1.3/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/de/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/es/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/fr/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/it/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/ja/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/ko/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/ru/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/zh-hans/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.3/zh-hant/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.dll",
+          "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/de/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/es/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/fr/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/it/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/ja/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/ko/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/ru/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/zh-hans/System.Security.Cryptography.X509Certificates.xml",
+          "ref/netstandard1.4/zh-hant/System.Security.Cryptography.X509Certificates.xml",
+          "ref/xamarinios10/_._",
+          "ref/xamarinmac20/_._",
+          "ref/xamarintvos10/_._",
+          "ref/xamarinwatchos10/_._",
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll",
+          "runtimes/win/lib/net46/System.Security.Cryptography.X509Certificates.dll",
+          "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll",
+          "runtimes/win/lib/netcore50/System.Security.Cryptography.X509Certificates.dll",
+          "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll",
+          "system.security.cryptography.x509certificates.4.1.0.nupkg.sha512",
+          "system.security.cryptography.x509certificates.nuspec"
+        ]
+      }
+    },
+    "projectFileDependencyGroups": {
+      "": [],
+      ".NETFramework,Version=v4.6": [
+        "Microsoft.Azure.Devices >= 1.16.0"
+      ]
+    },
+    "tools": {},
+    "projectFileToolGroups": {},
+    "packageFolders": {
+      "D:\\home\\data\\Functions\\packages\\nuget": {}
+    }
+  }

@@ -33,6 +33,11 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ sudo usermod -aG docker seank
   $ sudo docker run hello-world
 
+  # install Docker Compose 
+  # find latest release version at https://github.com/docker/compose/releases and run the commands there with sudo
+  $ sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  $ sudo chmod +x /usr/local/bin/docker-compose
+
   # install VS Code
   $ sudo snap install --classic code
   $ sudo apt autoremove

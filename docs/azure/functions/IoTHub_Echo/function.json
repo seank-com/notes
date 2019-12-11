@@ -1,0 +1,14 @@
+{
+    "bindings": [
+      {
+        "type": "eventHubTrigger",
+        "name": "message",
+        "direction": "in",
+        "path": "seank",
+        "connection": "seank_events_IOTHUB",
+        "consumerGroup": "fn",
+        "cardinality": "one"
+      }
+    ],
+    "disabled": true
+  }
