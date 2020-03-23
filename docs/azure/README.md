@@ -29,3 +29,30 @@ When you are done with the VM run the following to clean up
 ```
 az group delete --name SeanKResources
 ```
+
+## Streaming Analytics Notes
+
+```SQL
+WITH cached as (SELECT * FROM iothub)
+SELECT * INTO asjson FROM cached
+SELECT * INTO ascsv FROM cached
+```
+
+### Inputs:
+
+![iothub](iothub.png)
+
+### Outputs:
+
+![ascsv](ascsv.png)
+
+![asjson](asjson.png)
+
+
+## Azure Functions
+
+## Other helpful links
+
+[Azure Accounts](https://account.azure.com/subscriptions)
+
+

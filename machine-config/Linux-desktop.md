@@ -4,6 +4,8 @@ Configuration steps, scripts and tools i use on linux machines. Feel free to ski
 
 I assume you are setting up a physical machine by booting a DVD with the [Ubuntu Server 64 bit ISO](http://www.ubuntu.com/download/server). If you are setting up a virtual machine either locally or in the cloud, see [Cloud configuration](Cloud.md)
 
+**NOTE:** *Nvidia drivers can cause you to get into a login loop. If this happens this [thread](https://askubuntu.com/questions/162075/my-computer-boots-to-a-black-screen-what-options-do-i-have-to-fix-it) might be helpful
+
 ## Basic Install
 
 ### Setting up your development environment
@@ -11,38 +13,44 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
 1. Open a terminal console (press ```super``` key and type ```term```) then run the following:
 
   ```bash
-  $ sudo apt-get update
-  $ sudo apt-get upgrade
-  $ sudo apt-get dist-upgrade
+  $ sudo apt update
+  $ sudo apt upgrade
+  $ sudo apt dist-upgrade
 
   # If Ubuntu is running in a VirtualBox VM
-  # Insert guess extensions here, intsall and restart
+  # Insert guess extensions here, install and restart
 
   # install git
-  $ sudo apt-get install git-gui
+  $ sudo apt install git
 
-2. Install [VSCode](https://code.visualstudio.com/) and [essential extensions](../docs/vscode/README.md)
-
-3. Go back to your terminal a run the following
   # install Docker
-  $ sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+  $ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
   $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   $ sudo apt-key fingerprint 0EBFCD88
   $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
   $ sudo apt-get update
-  $ sudo apt-get install docker-ce
+  $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+  $ sudo usermod -aG docker seank
   $ sudo docker run hello-world
 
-  # install Bro Pages (pay attention to any warning about updating your path)
-  $ sudo apt-get install ruby-dev
-  $ gem install --user-install bropages
+  # possibly install Docker Compose 
+  # find latest release version at https://github.com/docker/compose/releases and run the commands there with sudo
+  #$ sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  #$ sudo chmod +x /usr/local/bin/docker-compose
 
+  # install VS Code
+  $ sudo snap install --classic code
   $ sudo apt autoremove
+  
+  # install Bro pages
+  $ sudo snap install ruby --classic
+  $ gem install bropages
 
   $ mkdir ~/Development
   $ code .bashrc & exit
   ```
 
+2. Install [VSCode essential extensions](../docs/vscode/README.md)
 
 3. Edit .bashrc to be something like the following
 
@@ -166,6 +174,9 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
+
+  # if you installed VSCode
+  $ git config --global core.editor "code --wait"
 
   # If you want to unset any git config commands above
   # you can use the following command
