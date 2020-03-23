@@ -145,3 +145,5 @@ pushd "%USERPROFILE%\Development"
   ```
   127.0.0.1 local.<yourdomainname>.com
   ```
+
+14. Install essential [VS Code extensions](../docs/vscode/README.md)

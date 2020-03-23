@@ -21,6 +21,9 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   # install git
   $ sudo apt-get install git-gui
 
+2. Install [VSCode](https://code.visualstudio.com/) and [essential extensions](../docs/vscode/README.md)
+
+3. Go back to your terminal a run the following
   # install Docker
   $ sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
   $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -30,11 +33,6 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ sudo apt-get install docker-ce
   $ sudo docker run hello-world
 
-  # install Atom
-  $ sudo add-apt-repository ppa:webupd8team/atom
-  $ sudo apt-get update
-  $ sudo apt-get install atom
-
   # install Bro Pages (pay attention to any warning about updating your path)
   $ sudo apt-get install ruby-dev
   $ gem install --user-install bropages
@@ -42,25 +40,9 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ sudo apt autoremove
 
   $ mkdir ~/Development
-  $ atom .bashrc & exit
+  $ code .bashrc & exit
   ```
 
-2. In ```atom```
-  - Goto Edit | Preferences | Install
-    - Enter merge-conflicts and press Packages
-    - Install merge-conflicts package
-    - repeat for find-selection, sort-lines & atom-mermaid
-  - Goto Edit | Preferences | Keybindings | your keymap file
-    - Append the following    
-      ```coffee
-      '.editor':
-        'ctrl-alt-up': 'editor:add-selection-above'
-        'ctrl-alt-down': 'editor:add-selection-below'
-
-      'atom-text-editor':
-        'alt-cmd-j': 'find-selection:find-previous-casesensitive'
-        'alt-cmd-k': 'find-selection:find-next-casesensitive'
-      ```
 
 3. Edit .bashrc to be something like the following
 
@@ -184,9 +166,6 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
-
-  # if you installed atom
-  $ git config --global core.editor "atom --wait"
 
   # If you want to unset any git config commands above
   # you can use the following command
