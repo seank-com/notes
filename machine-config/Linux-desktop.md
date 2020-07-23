@@ -193,3 +193,5 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   - Enter a name for your machine
   - Right click in key field and select Paste
   - Click Add SSH key
+
+6. Instal [gTile](https://github.com/gTile/gTile)
