@@ -13,12 +13,13 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew install node
   $ brew install bash-completion
   $ brew install brew-cask-completion
+  $ brew cask install visual-studio-code
   $ brew install youtube-dl
   $ brew cask install iterm2
   $ touch .bash_profile
   $ touch .bashrc
   $ mkdir ~/Development
-  $ atom .bash_profile .bashrc & exit
+  $ code .bash_profile .bashrc & exit
   ```
 
 4. Edit .bash_profile (see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html) for details)
@@ -149,13 +150,8 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 
   # Other useful tools
   $ brew install jq     
-  $ brew install bash-completion			
-  $ brew install brew-cask-completion		
   $ brew install mkvtoolnix
-  $ brew install node
-  $ brew install git				
   $ brew install kubernetes-helm			
-  $ brew install youtube-dl
 
   $ brew cask install android-file-transfer
   $ brew cask install dropbox
@@ -191,7 +187,6 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   $ brew cask install microsoft-teams
 
   # Development Tools
-  $ brew cask install visual-studio-code
   $ brew cask install microsoft-azure-storage-explorer
   #$ brew cask install unity
   #$ brew cask install visual-studio
@@ -223,9 +218,6 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
   $ git config --global alias.sync "pull --rebase --autostash"
-
-  # if you installed atom
-  $ git config --global core.editor "atom --wait"
 
   # If you want to unset any git config commands above
   # you can use the following command
@@ -270,7 +262,7 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 10. Install [Vagrant](https://www.vagrantup.com/downloads.html)
 11. Update hosts file
   ```bash
-  $ atom /etc/hosts
+  $ code /etc/hosts
   ```
   $ add the following line to the end
   ```
@@ -282,3 +274,5 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
 13. Install [USB to UART driver](https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx)
 
 14.  Install [KeepassX](https://www.keepassx.org/downloads/0-4)
+
+15. Install essential [VS Code extensions](../docs/vscode/README.md)

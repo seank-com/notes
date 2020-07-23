@@ -33,10 +33,10 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ sudo usermod -aG docker seank
   $ sudo docker run hello-world
 
-  # install Docker Compose 
+  # possibly install Docker Compose 
   # find latest release version at https://github.com/docker/compose/releases and run the commands there with sudo
-  $ sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-  $ sudo chmod +x /usr/local/bin/docker-compose
+  #$ sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  #$ sudo chmod +x /usr/local/bin/docker-compose
 
   # install VS Code
   $ sudo snap install --classic code
@@ -50,7 +50,9 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   $ code .bashrc & exit
   ```
 
-2. Edit .bashrc to be something like the following
+2. Install [VSCode essential extensions](../docs/vscode/README.md)
+
+3. Edit .bashrc to be something like the following
 
   ```bash
 
@@ -173,7 +175,7 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
 
-  # if you installed atom
+  # if you installed VSCode
   $ git config --global core.editor "code --wait"
 
   # If you want to unset any git config commands above
