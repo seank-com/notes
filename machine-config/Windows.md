@@ -5,10 +5,19 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 ### Setting up your development environment
 
 1. Install [Chrome](https://www.google.com/chrome/)
-3. Install [Visual Studio Code](https://code.visualstudio.com/Download)
-5. Install [Git](https://git-scm.com/)
-6. Install [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
-6. Install [PowerToys](https://github.com/microsoft/PowerToys/releases)
+2. Install [Dropbox](https://www.dropbox.com/downloading)
+3. Install [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+4. Install [Visual Studio Code](https://code.visualstudio.com/Download) 
+  
+  - Check "Register Code as an editor for supported file types"
+  
+    *If you don't, everything will open in Visual Studio*
+  
+5. Install [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)
+6. While the store is open search for Ubuntu and install
+7. Goto [wslinstall](https://aka.ms/wslinstall) and follow instructions
+8. Install [PowerToys](https://github.com/microsoft/PowerToys/releases)
+9. Install [Git](https://git-scm.com/)
 
   - Select Components
 
@@ -17,6 +26,10 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   - Start Menu Folder
 
     *default is fine*
+  
+  - Select "Use Visual Studio Code as Git's default editor"
+  
+  - Select "Let Git decide"
 
   - Select "Use Git and optional Unix tools from the Windows Command Prompt"
 
@@ -30,29 +43,35 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     *On Windows 10 it's not as bad as the description makes it sound*
 
-  - Uncheck "Enable Git Credential Manager"
+  - Select "Default (fast-forward or merge)"
+  
+  - Select "None"
 
     *we'll be setting up ssh keys*
+    
+   - Defaults for file system caching and symbolic links are fine
+   
+   - Uncheck "Enable experimental support for pseudo consoles"
 
-6. Launch an elevated command prompt
+9. Launch an elevated command prompt
 
   (Press <kbd>Win</kbd>+<kbd>R</kbd>, type `cmd`, click OK, right click icon on taskbar, right click 'Command Prompt', right click 'Run as administrator')
 
   ```
   cd %USERPROFILE%
-  md Bin
-  md Development
-  atom Bin\Init.cmd Bin\cmds.lst
+  md bin
+  md development
+  code bin\init.cmd bin\cmds.lst
   ```
 
   For Init.cmd put the following
 
   ```cmd
 @echo off
-set PATH=%PATH%;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\v-seakel\AppData\Local\Programs\Microsoft VS Code\bin;%~dp0
-if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat" -arch=amd64 -host_arch=amd64
+set PATH=%PATH%;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;%~dp0
+if exist "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat" call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat" -arch=amd64 -host_arch=amd64
 alias -f "%USERPROFILE%\Bin\cmds.lst"
-pushd "%USERPROFILE%\Development"
+pushd "%USERPROFILE%\development"
   ```
 
   Copy alias.exe into %USERPROFILE%\Bin if you haven't already.
@@ -66,7 +85,7 @@ pushd "%USERPROFILE%\Development"
   dev  pushd "%USERPROFILE%\Development"
   ```
 
-8. Create a shortcut on your desktop with the following Target
+10. Create a shortcut on your desktop with the following Target
 
   Right click on your desktop and select New | Shortcut
 
@@ -81,7 +100,7 @@ pushd "%USERPROFILE%\Development"
   Right click the icon and select Properties.
   Click the Advanced button and check 'Run as administrator'
 
-9. Remove paths from system settings
+11. Remove paths from system settings
 
   Press <kbd>Win</kbd>+<kbd>Pause</kbd> | Advanced system settings | Environment Variables..., adjust the PATH variable as follows
 
@@ -94,60 +113,12 @@ pushd "%USERPROFILE%\Development"
   double click PATH under System variables and remove
 
   ```
-  C:\Program Files\nodejs\;
-  C:\Program Files\Git\cmd;
-  C:\Program Files\Git\mingw64\bin;
-  C:\Program Files\Git\usr\bin;
+  C:\Program Files\Git\cmd
+  C:\Program Files\Git\mingw64\bin
+  C:\Program Files\Git\usr\bin
   ```
 
-10. Launch the dev window from the shortcut
-
-  configure git with the following commands
-
-  ```
-  git config --global user.name "Your Name Here"
-  git config --global user.email "your_email@example.com"
-  git config --global color.ui auto
-  git config --global push.default simple
-  git config --global alias.lga "log --graph --oneline --all --decorate"
-  ```  
-
-11. Launch Git bash
-
-  Press the <kbd>Win</kbd> key and type `git` right click Git Bash and select pin to taskbar then click the button on the taskbar
-
-  Setup ssh keys for github with the following commands
-
-  ```bash
-  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-  Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-  Enter passphrase (empty for no passphrase): [Press enter]
-  Enter same passphrase again: [Press enter]
-  $ eval "$(ssh-agent -s)"
-  $ ssh-add ~/.ssh/id_rsa
-  $ clip < ~/.ssh/id_rsa.pub
-  ```
-
-12. Goto [Github ssh settings](https://github.com/settings/ssh)
-  - Click New SSH key
-  - Enter a name for your machine
-  - Right click in key field and select Paste
-  - Click Add SSH key
-
-13. Update hosts file
-
-  Enter the following command in your dev window
-
-  ```
-  code C:\Windows\System32\drivers\etc\hosts
-  ```
-  add the following line to the end
-  ```
-  127.0.0.1 local.<yourdomainname>.com
-  ```
-
-14. Install essential [VS Code extensions](../docs/vscode/README.md)
-
+12. Launch Windows Terminal click down caret and select 
 
 ```json
 // This file was initially generated by Windows Terminal 1.0.1401.0
@@ -279,3 +250,44 @@ pushd "%USERPROFILE%\Development"
     ]
 }
 ```
+
+12. Launch the Windows Terminal and from Ubuntudev window from the shortcut
+
+  configure git with the following commands
+
+  ```
+  $ git config --global user.name "Your Name Here"
+  $ git config --global user.email "your_email@example.com"
+  $ git config --global color.ui auto
+  $ git config --global push.default simple
+  $ git config --global alias.lga "log --graph --oneline --all --decorate"
+  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+  Enter passphrase (empty for no passphrase): [Press enter]
+  Enter same passphrase again: [Press enter]
+  $ eval "$(ssh-agent -s)"
+  $ ssh-add ~/.ssh/id_rsa
+  $ clip < ~/.ssh/id_rsa.pub
+  ```
+
+14. Goto [Github ssh settings](https://github.com/settings/ssh)
+  - Click New SSH key
+  - Enter a name for your machine
+  - Right click in key field and select Paste
+  - Click Add SSH key
+
+15. Update hosts file
+
+  Enter the following command in your dev window
+
+  ```
+  code C:\Windows\System32\drivers\etc\hosts
+  ```
+  add the following line to the end
+  ```
+  127.0.0.1 local.<yourdomainname>.com
+  ```
+
+16. Install essential [VS Code extensions](../docs/vscode/README.md)
+
+
