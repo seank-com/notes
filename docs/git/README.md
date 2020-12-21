@@ -23,3 +23,14 @@ git submodule update --init --recursive
     ```
     git pull upstream master
     ```
+
+### Updating projects that require tags to package
+
+1. add and commit any changes
+
+2. tag the current commit and push
+
+    ```
+    git tag v#.#.#.#
+    git push origin --tags
+    ```
