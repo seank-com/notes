@@ -33,4 +33,5 @@ git submodule update --init --recursive
     ```
     git tag v#.#.#.#
     git push origin --tags
+    git push
     ```
