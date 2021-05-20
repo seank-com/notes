@@ -9,4 +9,6 @@ $ rsync -av --progress --exclude ".Trashes" /Users/seank/Desktop/Personal/E-Book
 
 $ rsync -av --progress --exclude ".Trashes" --exclude ".DS_Store" /Volumes/Admin /Volumes/Backup
 
+$ rsync -avP --delete-after --exclude-from=excludes /Volumes/Media/Personal/ /Volumes/nas-backup/Media/Personal/
+$ rsync -avP --delete-after --exclude-from=excludes /Volumes/Personal/ /Volumes/nas-backup/Personal/
 ```
