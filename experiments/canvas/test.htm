@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>My Canvas Demo </title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<canvas id="chart" width="600" height="450"></canvas>
+<script>
+	var _canvas = document.getElementById('chart');
+	var _ctx = _canvas.getContext("2d");		
+
+	_ctx.moveTo(110, 5);
+	_ctx.lineTo(110,375);
+
+	// Define Style and stroke lines.
+	_ctx.strokeStyle = "#000";
+	_ctx.stroke();
+
+</script>
+</body>
+</html>
