@@ -1,0 +1,37 @@
+<html> 
+	<head> 
+		<title>My Math Assignment</title> 
+		<style> 
+			table { font: 30pt Times; vertical-align : top; }
+			td.wa { padding-left: 1; text-align: right; }
+			td.fa { padding-right: 1; text-align: left;  }
+			td.wo { padding-left: 1; text-align: right; }
+			td.fo { padding-right: 1; text-align: left;  }
+			td.wm { padding-left: 1; text-align: right; border-bottom:thin solid black; }
+			td.fm { padding-right: 1; text-align: left; border-bottom:thin solid black; }
+			td.dwo { padding-left: 1; text-align: right; border-left:thin solid black;}
+		</style> 
+	</head> 
+	<body> 
+	<table id=worksheet height="100%" width="100%"> 
+	</table> 
+	<script id="layout20" type="text/x-jquery-tmpl">
+	  <tr><td align=center></td><td align=center></td><td align=center></td><td align=center></td></tr>
+	  <tr><td align=center></td><td align=center></td><td align=center></td><td align=center></td></tr>
+	  <tr><td align=center></td><td align=center></td><td align=center></td><td align=center></td></tr>
+	  <tr><td align=center></td><td align=center></td><td align=center></td><td align=center></td></tr>
+	  <tr><td align=center></td><td align=center></td><td align=center></td><td align=center></td></tr>
+	</script>	
+	<script id="vap" type="text/x-jquery-tmpl">
+		<table cellspacing=0>
+			<tr><td class=wo>${wpop1}</to><td class=fo>${fpop1}</td></tr>
+			<tr><td class=wm>+ ${wpop2}</td><td class=fm>${fpop2}</td></tr>
+			<tr><td class=wo>${wpans}</td><td class=fo>${fpans}</td></tr>
+		</table>
+	</script>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+	<script src="program.js"></script>
+	</body>
+</html>
