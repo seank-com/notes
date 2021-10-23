@@ -285,6 +285,11 @@ pushd "%USERPROFILE%\development"
   $ git config --global color.ui auto
   $ git config --global push.default simple
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
+  $ git config --global core.editor "code --wait"
+  $ git config --global merge.tool vscode
+  $ git config --global mergetool.vscode.cmd "code --wait $MERGED"
+  $ git config --global diff.tool vscode
+  $ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
   Enter passphrase (empty for no passphrase): [Press enter]
