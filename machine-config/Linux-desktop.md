@@ -174,13 +174,21 @@ I assume you are setting up a physical machine by booting a DVD with the [Ubuntu
 
   # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
-
-  # if you installed VSCode
-  $ git config --global core.editor "code --wait"
+  $ git config --global alias.sync "pull --rebase --autostash"
 
   # If you want to unset any git config commands above
   # you can use the following command
   #$ git config --global --unset-all core.editor
+
+  # if you installed VSCode
+  $ git config --global core.editor "code --wait"
+  $ git config --global merge.tool vscode
+  $ git config --global mergetool.vscode.cmd "code --wait $MERGED"
+  $ git config --global diff.tool vscode
+  $ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+  # copy .gitmessage from machine-config to you home folder
+  $ git config --global commit.template ~/.gitmessage
 
   # generate ssh keys
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"

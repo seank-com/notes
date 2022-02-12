@@ -309,18 +309,37 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
   configure git with the following commands
 
-  ```
+  ```bash
   $ git config --global user.name "Your Name Here"
   $ git config --global user.email "your_email@example.com"
   $ git config --global color.ui auto
   $ git config --global push.default simple
+  $ git config --global core.filemode false
+  $ git config --global fetch.prune true
+  $ git config --global pull.rebase true
+  # see http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+  $ git config --global core.autocrlf input
+  $ git config --global core.safecrlf true
+
+  # adds git lga command (try it, you'll love it)
   $ git config --global alias.lga "log --graph --oneline --all --decorate"
+  $ git config --global alias.sync "pull --rebase --autostash"
+
+  # If you want to unset any git config commands above
+  # you can use the following command
+  #$ git config --global --unset-all core.editor
+
+  # configure VS code
   $ git config --global core.editor "code --wait"
   $ git config --global merge.tool vscode
   $ git config --global mergetool.vscode.cmd "code --wait $MERGED"
   $ git config --global diff.tool vscode
   $ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+  # copy .gitmessage from machine-config to you home folder
   $ git config --global commit.template ~/.gitmessage
+
+  # generate ssh keys
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
   Enter passphrase (empty for no passphrase): [Press enter]

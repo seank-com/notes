@@ -223,6 +223,9 @@ Configuration steps, scripts and tools i use on mac machines. Feel free to skip 
   # you can use the following command
   #$ git config --global --unset-all core.editor
 
+  # copy .gitmessage from machine-config to you home folder
+  $ git config --global commit.template ~/.gitmessage
+
   # generate ssh keys
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
