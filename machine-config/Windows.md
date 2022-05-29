@@ -116,11 +116,17 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 12. Launch Windows Terminal click down caret and select Settings then click 'Open JSON file'
 
-    update defaultProfile to point to 
+    add Dev Shell profile
 
     ```js
-    "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-    ```
+    {
+        // Make changes here to the cmd.exe profile.
+        "guid": "{2fb4199f-dbbf-47a3-ac82-bd1ee77a8287}",
+        "name": "Dev Shell",
+        "commandline": "%ComSpec% /k \"%USERPROFILE%\\Bin\\Init.cmd\"",
+        "hidden": false
+    },
+    ```              
 
     update Ubuntu profile to use colorScheme UbuntuLegit
 
@@ -162,6 +168,13 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
         }        
     ],
     ```
+
+    update defaultProfile to point to you faovrite shell
+
+    ```js
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    ```
+
 
 13. create ```~/.gitmessage``` and edit in code as follows
 
@@ -294,5 +307,14 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 23. Install [OBS](https://obsproject.com/)
 24. Install [Blender](https://www.blender.org/)
 25. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
+
+    Click the button-plus icon along the center top (to the left of the gear) to install plugins. In the search enter "barraider" and install "Speed Test" and "World Time"
+
+    ![alt text](../docs/img/StreamDeckPlugins.jpg "Add Plugins")
+
+    Click the gear icon, go to the Profiles tab and click the dropdown to Import
+
+    ![alt text](../docs/img/StreamDeckImport.jpg "Import Settings")
+
 26. Install [VoiceMod](https://www.voicemod.net/)
 27. Install [Steam](https://store.steampowered.com/)
