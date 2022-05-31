@@ -301,12 +301,13 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     code --install-extension number-it-0.0.1.vsix
     ```
 
-20. Install [Beyond Compare](https://www.scootersoftware.com/download.php) and follow directions for [configuring](https://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows) From your Dev shell
-21. Install [DisplayFusion](https://www.displayfusion.com/)
-22. Install [Unity](https://store.unity.com/)
-23. Install [OBS](https://obsproject.com/)
-24. Install [Blender](https://www.blender.org/)
-25. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
+20. Install [Discord](https://discord.com/)
+21. Install [Beyond Compare](https://www.scootersoftware.com/download.php) and follow directions for [configuring](https://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows) From your Dev shell
+22. Install [DisplayFusion](https://www.displayfusion.com/)
+23. Install [Unity](https://store.unity.com/)
+24. Install [OBS](https://obsproject.com/)
+25. Install [Blender](https://www.blender.org/)
+26. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
 
     Click the button-plus icon along the center top (to the left of the gear) to install plugins. In the search enter "barraider" and install "Speed Test" and "World Time"
 
@@ -316,5 +317,5 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     ![alt text](../docs/img/StreamDeckImport.jpg "Import Settings")
 
-26. Install [VoiceMod](https://www.voicemod.net/)
-27. Install [Steam](https://store.steampowered.com/)
+27. Install [VoiceMod](https://www.voicemod.net/)
+28. Install [Steam](https://store.steampowered.com/)
