@@ -319,3 +319,4 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 27. Install [VoiceMod](https://www.voicemod.net/)
 28. Install [Steam](https://store.steampowered.com/)
+29. Install [Docker](https://www.docker.com/get-started/)
