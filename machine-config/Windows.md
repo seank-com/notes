@@ -16,11 +16,15 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 7. Open an elevated command prompt or powershell and run the following (see [wslinstall](https://aka.ms/wslinstall) 
 
     ```
+    wsl --list --online
+    wsl --install -d Ubuntu-22.04
     wsl --install
     # if the above command hangs or fails, follow up with
     wsl --update
     wsl --install -D Ubuntu
     ```
+
+    _**Note: If you need to complete uninstall WSL follow the steps [here](https://www.makeuseof.com/uninstall-wsl-windows/)_
 
 8. Install [PowerToys](https://github.com/microsoft/PowerToys/releases)
 9. Install [Node](https://nodejs.org/)
