@@ -179,7 +179,6 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     ```
 
-
 13. create ```~/.gitmessage``` and edit in code as follows
 
   ```
@@ -260,7 +259,31 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   - Right click in key field and select Paste
   - Click Add SSH key
 
-16. Update hosts file
+16. Setup Git Credential Manager (see [Engineering Hub](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/1es-security-configuration/configuration-guides/gcm) for more details)
+
+  From the Windows Terminal click down caret and select Dev Shell
+
+  ```dos
+  winget install Git.Git
+  git config --global credential.azreposCredentialType oauth
+  git config --global credential.msauthUseBroker true
+  git config --global credential.msauthUseDefaultAccount true
+  ```
+
+  return to Ubuntudev window
+
+  ```bash
+  git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+  git config --global credential.https://dev.azure.com.useHttpPath true
+  ```
+
+  return to Dev Shell window if you see safe directory errors
+
+  ```dos
+  git config --global --add safe.directory '*'
+  ```
+
+17. Update hosts file
 
   Enter the following command in your dev window
 
@@ -272,7 +295,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   127.0.0.1 local.<yourdomainname>.com
   ```
 
-17. In an Ubuntu WSL window
+18. In an Ubuntu WSL window
 
     ```bash
     cd ~
@@ -293,9 +316,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     sudo apt install npm
     ```
 
-18. Install essential [VS Code extensions](../docs/vscode/README.md)
+19. Install essential [VS Code extensions](../docs/vscode/README.md)
 
-19. Install [my extension](https://github.com/seank-com/number-it)
+20. Install [my extension](https://github.com/seank-com/number-it)
 
     Run the following from a command console
 
@@ -305,13 +328,13 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     code --install-extension number-it-0.0.1.vsix
     ```
 
-20. Install [Discord](https://discord.com/)
-21. Install [Beyond Compare](https://www.scootersoftware.com/download.php) and follow directions for [configuring](https://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows) From your Dev shell
-22. Install [DisplayFusion](https://www.displayfusion.com/)
-23. Install [Unity](https://store.unity.com/)
-24. Install [OBS](https://obsproject.com/)
-25. Install [Blender](https://www.blender.org/)
-26. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
+21. Install [Discord](https://discord.com/)
+22. Install [Beyond Compare](https://www.scootersoftware.com/download.php) and follow directions for [configuring](https://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows) From your Dev shell
+23. Install [DisplayFusion](https://www.displayfusion.com/)
+24. Install [Unity](https://store.unity.com/)
+25. Install [OBS](https://obsproject.com/)
+26. Install [Blender](https://www.blender.org/)
+27. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
 
     Click the button-plus icon along the center top (to the left of the gear) to install plugins. In the search enter "barraider" and install "Speed Test" and "World Time"
 
@@ -321,6 +344,6 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     ![alt text](../docs/img/StreamDeckImport.jpg "Import Settings")
 
-27. Install [VoiceMod](https://www.voicemod.net/)
-28. Install [Steam](https://store.steampowered.com/)
-29. Install [Docker](https://www.docker.com/get-started/)
+28. Install [VoiceMod](https://www.voicemod.net/)
+29. Install [Steam](https://store.steampowered.com/)
+30. Install [Docker](https://www.docker.com/get-started/)
