@@ -312,13 +312,15 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     ```bash
     sudo apt update
-    sudo apt install nodejs
-    sudo apt install npm
     ```
 
-19. Install essential [VS Code extensions](../docs/vscode/README.md)
+19. Install NVM on WSL and DOS
 
-20. Install [my extension](https://github.com/seank-com/number-it)
+    https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+
+20. Install essential [VS Code extensions](../docs/vscode/README.md)
+
+21. Install [my extension](https://github.com/seank-com/number-it)
 
     Run the following from a command console
 
@@ -328,13 +330,13 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     code --install-extension number-it-0.0.1.vsix
     ```
 
-21. Install [Discord](https://discord.com/)
-22. Install [Beyond Compare](https://www.scootersoftware.com/download.php) and follow directions for [configuring](https://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows) From your Dev shell
-23. Install [DisplayFusion](https://www.displayfusion.com/)
-24. Install [Unity](https://store.unity.com/)
-25. Install [OBS](https://obsproject.com/)
-26. Install [Blender](https://www.blender.org/)
-27. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
+22. Install [Discord](https://discord.com/)
+23. Install [Beyond Compare](https://www.scootersoftware.com/download.php) and follow directions for [configuring](https://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows) From your Dev shell
+24. Install [DisplayFusion](https://www.displayfusion.com/)
+25. Install [Unity](https://store.unity.com/)
+26. Install [OBS](https://obsproject.com/)
+27. Install [Blender](https://www.blender.org/)
+28. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
 
     Click the button-plus icon along the center top (to the left of the gear) to install plugins. In the search enter "barraider" and install "Speed Test" and "World Time"
 
@@ -344,6 +346,6 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
     ![alt text](../docs/img/StreamDeckImport.jpg "Import Settings")
 
-28. Install [VoiceMod](https://www.voicemod.net/)
-29. Install [Steam](https://store.steampowered.com/)
-30. Install [Docker](https://www.docker.com/get-started/)
+29. Install [VoiceMod](https://www.voicemod.net/)
+30. Install [Steam](https://store.steampowered.com/)
+31. Install [Docker](https://www.docker.com/get-started/)
