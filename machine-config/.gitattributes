@@ -1,0 +1,93 @@
+# .gitattributes – Windows-friendly defaults + Unity safety rails
+#
+# Goal:
+# - Human text (.cs, .md, .txt, .html, etc.) behaves nicely with core.autocrlf=true
+# - Unity/machine-parsed files NEVER get line ending conversion (fragile)
+# - Obvious binaries are treated as binary (no EOL conversion, no diffs)
+
+# --- General text (let Git normalize CRLF->LF on commit; checkout per platform) ---
+# You can add more here as needed for your stacks.
+*.cs      text
+*.js      text
+*.ts      text
+*.tsx     text
+*.jsx     text
+*.json    text
+*.css     text
+*.scss    text
+*.less    text
+*.html    text
+*.htm     text
+*.xml     text
+*.yml     text
+*.yaml    text
+*.txt     text
+*.md      text
+*.csv     text
+*.ini     text
+*.props   text
+*.targets text
+*.ps1     text
+*.cmd     text
+*.bat     text
+*.sh      text
+*.toml    text
+*.conf    text
+*.nuspec  text
+*.sln     text
+*.csproj  text
+*.props   text
+*.targets text
+*.editorconfig text
+*.gitattributes text
+*.gitignore    text
+
+# --- Unity & other machine-parsed text-like assets (NO conversion) ---
+# Mark as -text so Git will not change EOLs at all.
+# Add to this list any format that a tool strictly parses (YAML-ish Unity files, etc.)
+*.meta        -text
+*.unity       -text
+*.prefab      -text
+*.anim        -text
+*.controller  -text
+*.mat         -text
+*.asset       -text
+*.timeline    -text
+*.shadergraph -text
+*.asmdef      -text
+*.asmref      -text
+
+# --- Common binaries (explicit) ---
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.bmp  binary
+*.tga  binary
+*.psd  binary
+*.svg  -text   # SVG is XML, but many pipelines treat it as an asset; choose 'text' if you diff it
+*.pdf  binary
+*.zip  binary
+*.7z   binary
+*.gz   binary
+*.rar  binary
+*.dll  binary
+*.exe  binary
+*.pdb  binary
+*.so   binary
+*.dylib binary
+*.a    binary
+*.lib  binary
+*.fbx  binary
+*.obj  binary
+*.mp3  binary
+*.wav  binary
+*.ogg  binary
+*.mp4  binary
+*.mov  binary
+
+# --- Catch-alls / safety ---
+# If you ever hit a fragile format, add it above as '-text' to prevent conversion.
+# You can also uncomment the next line to default everything to binary and whitelist text instead:
+# * binary
+# (If you do that, be sure to keep the text whitelist above.)
