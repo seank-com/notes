@@ -286,9 +286,54 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     sudo apt update
     ```
 
-18. Install NVM on WSL and DOS
+18. Install NVM
 
-    https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+    _**Install NVM (Node Version Manager) on WSL (Ubuntu)**_
+
+    Open your Ubuntu WSL terminal and run:
+    ```bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    # Or use wget:
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    ```
+    After installation, add the following to your `~/.bashrc` (if not already added):
+    ```bash
+    export NVM_DIR="$([ -z "$XDG_CONFIG_HOME" ] && printf %s "$HOME/.nvm" || printf %s "$XDG_CONFIG_HOME/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    ```
+    Then reload your shell:
+    ```bash
+    source ~/.bashrc
+    nvm --version
+    ```
+    Install Node.js using nvm:
+    ```bash
+    nvm install --lts
+    nvm use --lts
+    node -v
+    npm -v
+    ```
+
+    _**Install NVM for Windows (nvm-windows)**_
+
+    Download the latest nvm-windows installer from [here](https://github.com/coreybutler/nvm-windows/releases)
+
+    Run the installer and follow the prompts.
+
+    After installation, open a new Command Prompt and verify:
+
+    ```cmd
+    nvm version
+    ```
+
+    Install Node.js using nvm-windows: (more details [here](https://github.com/coreybutler/nvm-windows#installation--upgrades))
+
+    ```cmd
+    nvm install latest
+    nvm use latest
+    node -v
+    npm -v
+    ```
 
 19. Install essential [VS Code extensions](../docs/vscode/README.md)
 
