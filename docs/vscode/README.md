@@ -29,7 +29,6 @@ code --install-extension humao.rest-client
 - [Azure IoT Hub](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 - [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
-- [Mermaid Markdown Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting)
 - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
 ```bash
@@ -38,7 +37,6 @@ code --install-extension ms-azuretools.vscode-azurefunctions
 code --install-extension vsciot-vscode.azure-iot-toolkit
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension yzane.markdown-pdf
-code --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting
 code --install-extension ms-vscode.cpptools
 ```
 

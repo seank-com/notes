@@ -4,193 +4,96 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
 
 ### Setting up your development environment
 
-1. Install [Chrome](https://www.google.com/chrome/)
-2. Install [Dropbox](https://www.dropbox.com/downloading)
-3. Install [Visual Studio](https://visualstudio.microsoft.com/downloads/)
-4. Install [Visual Studio Code](https://code.visualstudio.com/Download) 
-  
-  - Check "Register Code as an editor for supported file types"
-  
-    *If you don't, everything will open in Visual Studio*
-
-5. Install [Git](https://git-scm.com/)
-
-  - Select Components
-
-    Check "Check daily for Git for Windows Updates"
-
-    _you can uncheck everything else_
-
-  - Choosing the default editor used by Git
-  
-    Select "Use Visual Studio Code as Git's default editor"
-
-  - Adjust the name of the initial branch in new repositories
-
-    Let Git decide
-
-  - Adjusting your PATH environment
-
-    Select "Use Git from the command line and also from 3rd-party software"
-
-    _You can adjust paths later (if you were worried)_
-  
-  - Choosing the SSH executable
-  
-    Select "Use bundled OpenSSH"
-
-  - Choosing HTTPS transport backend
-
-    Select "Use the OpenSSL Library"
-
-  - Configure the line ending conversions
-
-    Select "Checkout Windows-style, commit Unix-style line endings"
-
-  - Configuring the terminal emulator to use with Git Bash
-  
-    Select "Use Windows' default console window"
-
-    *On Windows 11 it's not as bad as the description makes it sound*
-
-  - Choose the default behaviour of 'git pull'
-  
-    Select "Default (fast-forward or merge)"
-  
-  - Choose a credential helper
-  
-    Select "Git Credential Manager Core"
+1. Open an elevated command prompt 
     
-   - Configuring extra options
-   
-     Defaults for file system caching and symbolic links are fine
-
-6. Install [PowerToys](https://github.com/microsoft/PowerToys/releases)
-
-7. Open an elevated command prompt or powershell and run the following (see [wslinstall](https://aka.ms/wslinstall) 
+    (Press <kbd>Win</kbd>, type `Terminal`, right click and select 'Run as administrator') and run the following
 
     ```
+    winget install --id Google.Chrome -e
+    winget install --id Dropbox.Dropbox -e
+    winget install --id Microsoft.VisualStudio.2022.Community -e
+    winget install --id Microsoft.VisualStudioCode -e
+    winget install --id Git.Git -e
+    winget install --id Microsoft.PowerToys -e
+    winget install --id CoreyButler.NVMforWindows -e
+    reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLinkedConnections /t REG_DWORD /d 1 /f
+    ```
+
+2. Find the Welcome to Power Toys window
+
+    - click the `Open Settings` button
+    - select General blade
+    - click `Restart PowerToys as administrator`
+    - select General blade again
+    - check Always run as administrator
+    - select FancyZones under Windowing & Layouts
+    - click `Open layout editor`
+    - click `Create new layout`
+    - name it "Grid", click `Grid` and click `Create`
+    - arrange at least 2 rows of 4 squares and click `Save`
+    - select FancyZones under Windowing & Layouts
+    - turn on `Override Windows Snap`
+    - Set `Move windows based on` to `Relative position`
+
+3. Close and repoen an elevated command prompt and run the following
+
+    ```
+    nvm install lts
+    nvm use lts
+    node -v
+    npm -v
     wsl --install
+    shutdown /r /f /t 0
+    ```
+
+4. Repoen an elevated command prompt and run the following
+
+    ```
     wsl --list --online
-    wsl --install -D Ubuntu
-    # if the above command hangs or fails, follow up with
-    wsl --update
-    wsl --install -D Ubuntu
+    wsl --install Ubuntu
+    cd %USERPROFILE%
+    md bin
+    code bin\init.cmd bin\cmds.lst
     ```
 
-    _**Note: If you need to complete uninstall WSL follow the steps [here](https://www.makeuseof.com/uninstall-wsl-windows/)_
-
-8. Install [Node](https://nodejs.org/)
-
-11. Launch an elevated command prompt
-
-  (Press <kbd>Win</kbd>+<kbd>R</kbd>, type `cmd`, click OK, right click icon on taskbar, right click 'Command Prompt', right click 'Run as administrator')
-
-  ```
-  cd %USERPROFILE%
-  md bin
-  md c:\repos
-  code bin\init.cmd bin\cmds.lst
-  ```
-
-  For Init.cmd put the following
-
-  ```cmd
-  @echo off
-  set PATH=%PATH%;%~dp0
-  if exist "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" call "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=amd64 -host_arch=amd64
-  alias -f "%USERPROFILE%\Bin\cmds.lst"
-  pushd "c:\repos"
-  ```
-
-  _**NOTE:** If you want to adjust paths here, Press <kbd>Win</kbd>+<kbd>Pause</kbd> | Advanced system settings | Environment Variables..., adjust the PATH variables and update them in the above batch file. Previous instructions recommended removing ```C:\Users\<username>\AppData\Roaming\npm;``` from User variables for <username> and ```C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin``` from System variables. This will break some Unity features and is no longer advised._
-
-  Copy alias.exe into %USERPROFILE%\Bin if you haven't already.
-
-  For cmds.lst put the following
-
-  ```
-  home pushd "%USERPROFILE%\Desktop"
-  self pushd "%USERPROFILE%"
-  bin  pushd "%USERPROFILE%\Bin"
-  dev  pushd "C:\repos"
-  ```
-
-12. Launch Windows Terminal click down caret and select Settings then click 'Open JSON file'
-
-    add Dev Shell profile
-
-    ```js
-    {
-        // Make changes here to the cmd.exe profile.
-        "guid": "{2fb4199f-dbbf-47a3-ac82-bd1ee77a8287}",
-        "name": "Dev Shell",
-        "commandline": "%ComSpec% /k \"%USERPROFILE%\\Bin\\Init.cmd\"",
-        "hidden": false
-    },
-    ```              
-
-    update Ubuntu profile to use colorScheme UbuntuLegit
-
-    ```js
-    {
-      "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-      "hidden": false,
-      "name": "Ubuntu",
-      "source": "Windows.Terminal.Wsl",
-      "colorScheme": "UbuntuLegit"
-    }
+5. For Init.cmd put the following
 
     ```
-
-    add UbuntuLegit to schemes
-
-    ```js
-    "schemes": [
-        {
-            "background":  "#2C001E",
-            "black":  "#4E9A06",
-            "blue":  "#3465A4",
-            "brightBlack":  "#555753",
-            "brightBlue":  "#729FCF",
-            "brightCyan":  "#34E2E2",
-            "brightGreen":  "#8AE234",
-            "brightPurple":  "#AD7FA8",
-            "brightRed":  "#EF2929",
-            "brightWhite":  "#EEEEEE",
-            "brightYellow":  "#FCE94F",
-            "cyan":  "#06989A",
-            "foreground":  "#EEEEEE",
-            "green":  "#300A24",
-            "name":  "UbuntuLegit",
-            "purple":  "#75507B",
-            "red":  "#CC0000",
-            "white":  "#D3D7CF",
-            "yellow":  "#C4A000"
-        }        
-    ],
+    @echo off
+    set PATH=%PATH%;%~dp0
+    if exist "c:\Program Files\Microsoft Visual Studio\18\Community\Common7\Tools\VsDevCmd.bat" call "c:\Program Files\Microsoft Visual Studio\18\Community\Common7\Tools\VsDevCmd.bat" -arch=amd64 -host_arch=amd64
+    alias -f "%USERPROFILE%\Bin\cmds.lst"
+    pushd "y:\xxx\repos"
     ```
 
-    update defaultProfile to point to you faovrite shell
+6. Copy alias.exe into %USERPROFILE%\Bin if you haven't already.
 
-    ```js
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    For cmds.lst put the following
+
+    ```
+    home pushd "%USERPROFILE%\Desktop"
+    self pushd "%USERPROFILE%"
+    bin  pushd "%USERPROFILE%\Bin"
+    dev  pushd "y:\xxx\repos"
     ```
 
-13. Copy `.gitmessage` to %USERPROFILE%
+7. click the caret on the Terminal window and select Settings  
 
-    ```cmd
-    copy .gitmessage %USERPROFILE%
-    git config --global commit.template "%USERPROFILE%\.gitmessage"
+8. click `Add a new profile`, slect Duplicate `Command Prompt` and press `Duplicate`
+
+    - rename to `Dev Shell`
+    - update Command line to `%SystemRoot%\System32\cmd.exe /k "%USERPROFILE%\Bin\Init.cmd"`
+    - click `Save`
+    - click `Startup`
+    - select `Dev Shell` as default profile
+    - click `Save`
+
+9. Back at the elevated command prompt, run the following
+
     ```
- 
-14. Launch the Windows Terminal (Dev Shell)
-
-    Run these once to set global defaults:
-
-    ```cmd
     git config --global user.name "Your Name Here"
     git config --global user.email "your_email@example.com"
+    
     git config --global color.ui auto
     git config --global push.default simple
     git config --global core.filemode false
@@ -198,14 +101,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     git config --global pull.rebase true
     git config --global core.autocrlf true
     git config --global core.safecrlf true
-
-    REM adds git lga command (try it, you'll love it)
+    
     git config --global alias.lga "log --graph --oneline --all --decorate"
     git config --global alias.sync "pull --rebase --autostash"
-
-    REM If you want to unset any git config commands above
-    REM you can use the following command
-    REM git config --global --unset-all core.editor
 
     git config --global core.editor "code --wait"
     git config --global merge.tool vscode
@@ -213,49 +111,17 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     git config --global diff.tool vscode
     git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
-    git config --global commit.template "%USERPROFILE%\.gitmessage"
+    git config --global --add safe.directory '*'
     ```
 
-    Verify remotes in each clone:
-
-    ```shell
-    git remote -v
-    ```
-
-    - GitHub should be `https://github.com/<user-or-org>/<repo>.git`  
-    - Azure Repos should be `https://dev.azure.com/<org>/<project>/_git/<repo>`  
-
-    If you see `ssh://` or `git@...`, fix with:
+10. Copy `.gitmessage` to %USERPROFILE%
 
     ```cmd
-    git remote set-url origin https://<correct-url>
+    copy .gitmessage %USERPROFILE%
+    git config --global commit.template "%USERPROFILE%\.gitmessage"
     ```
-
-15. Setup Git Credential Manager (see [Engineering Hub](https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/1es-security-configuration/configuration-guides/gcm) for more details)
-
-  From the Windows Terminal click down caret and select Dev Shell
-
-  ```dos
-  winget install Git.Git
-  git config --global credential.azreposCredentialType oauth
-  git config --global credential.msauthUseBroker true
-  git config --global credential.msauthUseDefaultAccount true
-  ```
-
-  OPTIONAL - To setup in WSL
-
-  ```bash
-  git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
-  git config --global credential.https://dev.azure.com.useHttpPath true
-  ```
-
-  return to Dev Shell window if you see safe directory errors
-
-  ```dos
-  git config --global --add safe.directory '*'
-  ```
-
-16. Update hosts file
+  
+11. Update hosts file
 
   Enter the following command in your dev window
 
@@ -267,77 +133,25 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
   127.0.0.1 local.<yourdomainname>.com
   ```
 
-17. In an Ubuntu WSL window
+12. Install Node in WSL (Ubuntu)
 
-    ```bash
-    cd ~
-    code .bashrc
-    ```
+    Node inside WSL is managed exclusively via nvm.  Do not install Node via apt.
 
-    add the following line to the end of the file
+    Open an Ubuntu WSL terminal and run:
 
-    ```bash
-    cd /mnt/c/repos
-    ```
-
-    the run
-
-    ```bash
-    sudo apt update
-    ```
-
-18. Install NVM
-
-    _**Install NVM (Node Version Manager) on WSL (Ubuntu)**_
-
-    Open your Ubuntu WSL terminal and run:
     ```bash
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-    # Or use wget:
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-    ```
-    After installation, add the following to your `~/.bashrc` (if not already added):
-    ```bash
-    export NVM_DIR="$([ -z "$XDG_CONFIG_HOME" ] && printf %s "$HOME/.nvm" || printf %s "$XDG_CONFIG_HOME/nvm")"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    ```
-    Then reload your shell:
-    ```bash
     source ~/.bashrc
-    nvm --version
-    ```
-    Install Node.js using nvm:
-    ```bash
     nvm install --lts
     nvm use --lts
     node -v
     npm -v
+    sudo apt update
     ```
 
-    _**Install NVM for Windows (nvm-windows)**_
+13. Install essential [VS Code extensions](../docs/vscode/README.md)
 
-    Download the latest nvm-windows installer from [here](https://github.com/coreybutler/nvm-windows/releases)
-
-    Run the installer and follow the prompts.
-
-    After installation, open a new Command Prompt and verify:
-
-    ```cmd
-    nvm version
-    ```
-
-    Install Node.js using nvm-windows: (more details [here](https://github.com/coreybutler/nvm-windows#installation--upgrades))
-
-    ```cmd
-    nvm install latest
-    nvm use latest
-    node -v
-    npm -v
-    ```
-
-19. Install essential [VS Code extensions](../docs/vscode/README.md)
-
-20. Install [my extension](https://github.com/seank-com/number-it)
+14. Install [my extension](https://github.com/seank-com/number-it)
 
     Run the following from a command console
 
@@ -347,13 +161,21 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     code --install-extension number-it-0.0.1.vsix
     ```
 
-21. Install [Discord](https://discord.com/)
-22. Install [Beyond Compare](https://www.scootersoftware.com/download.php) and follow directions for [configuring](https://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows) From your Dev shell
-23. Install [DisplayFusion](https://www.displayfusion.com/)
-24. Install [Unity](https://store.unity.com/)
-25. Install [OBS](https://obsproject.com/)
-26. Install [Blender](https://www.blender.org/)
-27. Install [Stream Deck](https://www.elgato.com/en/stream-deck)
+15. Install other tools
+
+    ```
+    winget install --id Discord.Discord -e
+    winget install --id Zoom.Zoom -e
+    winget install --id ScooterSoftware.BeyondCompare4 -e
+    winget install --id BinaryFortress.DisplayFusion -e
+    winget install --id Unity.UnityHub -e
+    winget install --id OBSProject.OBSStudio -e
+    winget install --id BlenderFoundation.Blender -e
+    winget install --id Voicemod.Voicemod -e
+    winget install --id Valve.Steam -e
+    winget install --id Docker.DockerDesktop -e
+    winget install --id Elgato.StreamDeck -e
+    ```
 
     Click the button-plus icon along the center top (to the left of the gear) to install plugins. In the search enter "barraider" and install "Speed Test" and "World Time"
 
@@ -362,7 +184,3 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     Click the gear icon, go to the Profiles tab and click the dropdown to Import
 
     ![alt text](../docs/img/StreamDeckImport.jpg "Import Settings")
-
-29. Install [VoiceMod](https://www.voicemod.net/)
-30. Install [Steam](https://store.steampowered.com/)
-31. Install [Docker](https://www.docker.com/get-started/)
