@@ -2,24 +2,34 @@
 
 Configuration steps, scripts and tools i use on windows machines. Feel free to skip any steps that don't work for you or add steps if you think something is missing.
 
-### Setting up your development environment
+## Setting up your development environment
 
-1. Open an elevated command prompt 
+1. Common Windows configuration changes
+
+    - Open Explorer, click View tab, click Options, select View tab, uncheck `Hide extensions for known file types`, click OK
+    - Open Settings
+        - select System, select Power, select `Screen, sleep, & hibernate settings` and make necessary adjustments. Otherwise you may find your machine sleeping while you are away for a short time.
+        - select Personalization, select Colors, select Dark mode
+        - select Windows Update, and make sure all updates are installed
+
+2. Open an elevated command prompt 
     
     (Press <kbd>Win</kbd>, type `Terminal`, right click and select 'Run as administrator') and run the following
 
     ```
+    reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLinkedConnections /t REG_DWORD /d 1 /f
     winget install --id Google.Chrome -e
     winget install --id Dropbox.Dropbox -e
     winget install --id Microsoft.VisualStudio.2022.Community -e
     winget install --id Microsoft.VisualStudioCode -e
+    winget install --id Microsoft.Office -e
     winget install --id Git.Git -e
+    winget install --id Obsidian.Obsidian -e
     winget install --id Microsoft.PowerToys -e
     winget install --id CoreyButler.NVMforWindows -e
-    reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLinkedConnections /t REG_DWORD /d 1 /f
     ```
 
-2. Find the Welcome to Power Toys window
+3. Find the Welcome to Power Toys window
 
     - click the `Open Settings` button
     - select General blade
@@ -35,7 +45,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     - turn on `Override Windows Snap`
     - Set `Move windows based on` to `Relative position`
 
-3. Close and repoen an elevated command prompt and run the following
+4. Close and reopen an elevated command prompt and run the following
 
     ```
     nvm install lts
@@ -46,7 +56,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     shutdown /r /f /t 0
     ```
 
-4. Repoen an elevated command prompt and run the following
+5. Reopen an elevated command prompt and run the following
 
     ```
     wsl --list --online
@@ -56,7 +66,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     code bin\init.cmd bin\cmds.lst
     ```
 
-5. For Init.cmd put the following
+6. For Init.cmd put the following
 
     ```
     @echo off
@@ -66,7 +76,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     pushd "y:\xxx\repos"
     ```
 
-6. Copy alias.exe into %USERPROFILE%\Bin if you haven't already.
+7. Copy alias.exe into %USERPROFILE%\Bin if you haven't already.
 
     For cmds.lst put the following
 
@@ -77,9 +87,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     dev  pushd "y:\xxx\repos"
     ```
 
-7. click the caret on the Terminal window and select Settings  
+8. click the caret on the Terminal window and select Settings  
 
-8. click `Add a new profile`, slect Duplicate `Command Prompt` and press `Duplicate`
+9. click `Add a new profile`, select Duplicate `Command Prompt` and press `Duplicate`
 
     - rename to `Dev Shell`
     - update Command line to `%SystemRoot%\System32\cmd.exe /k "%USERPROFILE%\Bin\Init.cmd"`
@@ -88,7 +98,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     - select `Dev Shell` as default profile
     - click `Save`
 
-9. Back at the elevated command prompt, run the following
+10. Back at the elevated command prompt, run the following
 
     ```
     git config --global user.name "Your Name Here"
@@ -114,26 +124,26 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     git config --global --add safe.directory '*'
     ```
 
-10. Copy `.gitmessage` to %USERPROFILE%
+11. Copy `.gitmessage` to %USERPROFILE%
 
     ```cmd
     copy .gitmessage %USERPROFILE%
     git config --global commit.template "%USERPROFILE%\.gitmessage"
     ```
   
-11. Update hosts file
+12. Update hosts file
 
-  Enter the following command in your dev window
+    Enter the following command in your dev window
 
-  ```
-  code C:\Windows\System32\drivers\etc\hosts
-  ```
-  add the following line to the end
-  ```
-  127.0.0.1 local.<yourdomainname>.com
-  ```
+    ```
+    code C:\Windows\System32\drivers\etc\hosts
+    ```
+    add the following line to the end
+    ```
+    127.0.0.1 local.<yourdomainname>.com
+    ```
 
-12. Install Node in WSL (Ubuntu)
+13. Install Node in WSL (Ubuntu)
 
     Node inside WSL is managed exclusively via nvm.  Do not install Node via apt.
 
@@ -149,9 +159,9 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     sudo apt update
     ```
 
-13. Install essential [VS Code extensions](../docs/vscode/README.md)
+14. Install essential [VS Code extensions](../docs/vscode/README.md)
 
-14. Install [my extension](https://github.com/seank-com/number-it)
+15. Install [my extension](https://github.com/seank-com/number-it)
 
     Run the following from a command console
 
@@ -161,7 +171,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     code --install-extension number-it-0.0.1.vsix
     ```
 
-15. Install other tools
+16. Install other tools
 
     ```
     winget install --id Discord.Discord -e
