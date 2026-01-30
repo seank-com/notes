@@ -194,3 +194,15 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     Click the gear icon, go to the Profiles tab and click the dropdown to Import
 
     ![alt text](../docs/img/StreamDeckImport.jpg "Import Settings")
+
+17. Install Handy (Optional - helpful for transcribing speech into notes)
+
+    Handy is a free, open-source speech-to-text application that works entirely offline. Since there doesn't appear to be a winget command for it yet, it will need to be downloaded manually.
+
+    - Visit [https://handy.computer](https://handy.computer)
+    - Navigate to [https://handy.computer/download](https://handy.computer/download)
+    - Click on "Windows x64 .exe" (approximately 12.6MB)
+    - Run the downloaded installer and follow the installation wizard
+    - Launch Handy and grant microphone and accessibility permissions when prompted
+    - If prompted to select a model, Parakeet V3 is recommended (works well)
+    - The default keyboard shortcut is typically <kbd>Ctrl</kbd>+<kbd>Spacebar</kbd>
