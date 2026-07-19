@@ -110,7 +110,7 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     git config --global fetch.prune true
     git config --global pull.rebase true
     git config --global core.autocrlf true
-    git config --global core.safecrlf true
+    git config --global core.safecrlf false
     
     git config --global alias.lga "log --graph --oneline --all --decorate"
     git config --global alias.sync "pull --rebase --autostash"
