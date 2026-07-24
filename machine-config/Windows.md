@@ -206,3 +206,36 @@ Configuration steps, scripts and tools i use on windows machines. Feel free to s
     - Launch Handy and grant microphone and accessibility permissions when prompted
     - If prompted to select a model, Parakeet V3 is recommended (works well)
     - The default keyboard shortcut is typically <kbd>Ctrl</kbd>+<kbd>Spacebar</kbd>
+
+18. Install AutoHotkey and configure clipboard-to-keystrokes
+
+    Install AutoHotkey v2:
+
+    ```cmd
+    winget install --id AutoHotkey.AutoHotkey -e
+    ```
+
+    Create `%USERPROFILE%\Bin\ClipboardTyper.ahk` with the following contents:
+
+    ```ahk
+    #Requires AutoHotkey v2.0
+    #SingleInstance Force
+
+    ^+v::{
+        KeyWait "Ctrl"
+        KeyWait "Shift"
+        SendText A_Clipboard
+    }
+    ```
+
+    This makes <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> type the current
+    clipboard contents as text instead of issuing a paste command. This is useful
+    for password fields and other controls that block clipboard paste.
+
+    Configure the script to run at sign-in:
+
+    - Press <kbd>Win</kbd>+<kbd>R</kbd>, enter `shell:startup`, and press <kbd>Enter</kbd>
+    - In the Startup folder, create a shortcut to `%USERPROFILE%\Bin\ClipboardTyper.ahk`
+    - Double-click the shortcut to start the script immediately
+    - Test it by copying some text, focusing a text field, and pressing
+      <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>
