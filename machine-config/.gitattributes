@@ -65,7 +65,8 @@
 *.bmp  binary
 *.tga  binary
 *.psd  binary
-*.svg  -text   # SVG is XML, but many pipelines treat it as an asset; choose 'text' if you diff it
+# SVG is XML, but many pipelines treat it as an asset; choose 'text' if you diff it
+*.svg  -text
 *.pdf  binary
 *.zip  binary
 *.7z   binary
